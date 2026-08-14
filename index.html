@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INTECH GROUP - Kiến Tạo Tương Lai!</title>
+    <title>INTECH GROUP - GIẢI PHÁP KINH DOANH THẾ HỆ MỚI!</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -29,58 +29,38 @@
 </head>
 <body class="bg-gray-100 text-gray-800 antialiased relative">
 
-    <!-- ==================== POPUP MODAL (Khu vực khoanh đỏ) ==================== -->
+    <!-- ==================== POPUP MODAL ==================== -->
     <div id="consultModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300">
         <div class="bg-white rounded-2xl shadow-2xl p-6 relative w-full max-w-md border border-gray-100 transform transition-all">
-            
-            <!-- Nút đóng Popup (Dấu X) -->
-            <button onclick="closeModal()" class="absolute top-3 right-4 text-red-500 hover:text-red-700 text-xl font-bold transition">
-                ✕
-            </button>
+            <button onclick="closeModal()" class="absolute top-3 right-4 text-red-500 hover:text-red-700 text-xl font-bold transition">✕</button>
 
-            <!-- Tiêu đề Form -->
             <h3 class="text-center font-bold text-gray-800 text-xs sm:text-sm uppercase tracking-wide mb-4 pr-4">
                 QUÝ KHÁCH CẦN TƯ VẤN HOẶC NHẬN<br>BÁO GIÁ, XIN ĐỂ LẠI YÊU CẦU TẠI ĐÂY!
             </h3>
 
-            <!-- Nội dung Form -->
             <form action="#" method="POST" class="space-y-3">
-                <div>
-                    <input type="text" placeholder="Họ tên *" required class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm focus:outline-none focus:border-intechGreen transition placeholder-gray-400">
-                </div>
-
-                <div>
-                    <input type="tel" placeholder="Điện thoại *" required class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm focus:outline-none focus:border-intechGreen transition placeholder-gray-400">
-                </div>
-
-                <div>
-                    <textarea rows="3" placeholder="Nội dung *" required class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm focus:outline-none focus:border-intechGreen transition placeholder-gray-400 resize-none"></textarea>
-                </div>
+                <input type="text" placeholder="Họ tên *" required class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm focus:outline-none focus:border-intechGreen transition placeholder-gray-400">
+                <input type="tel" placeholder="Điện thoại *" required class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm focus:outline-none focus:border-intechGreen transition placeholder-gray-400">
+                <textarea rows="3" placeholder="Nội dung *" required class="w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm focus:outline-none focus:border-intechGreen transition placeholder-gray-400 resize-none"></textarea>
 
                 <button type="submit" class="w-full bg-intechGreen hover:bg-intechGreenDark text-white font-bold py-2.5 rounded-md uppercase text-sm tracking-wider shadow-md transition duration-200">
                     TƯ VẤN MIỄN PHÍ
                 </button>
             </form>
 
-            <!-- Hotline -->
             <div class="mt-3 text-center text-sm font-medium text-gray-700">
                 Hotline: <a href="tel:0986448456" class="text-red-600 font-bold text-base hover:underline">0986.448.456</a>
             </div>
         </div>
     </div>
-    <!-- ==================== END POPUP MODAL ==================== -->
 
-
-    <!-- Header / Navigation Bar -->
+    <!-- ==================== HEADER ==================== -->
     <header class="bg-white sticky top-0 z-40 border-b border-gray-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
-            <!-- Logo Intech Group -->
             <a href="https://intech-group.vn" class="flex items-center">
                 <img src="https://intech-group.vn/uploads/logo/logo-intech.png" alt="Intech Group Logo" class="h-12 w-auto object-contain" onerror="this.src='https://via.placeholder.com/180x50?text=Intech+Group'">
             </a>
 
-            <!-- Navigation Links -->
             <nav class="hidden lg:flex items-center space-x-5 text-xs font-bold uppercase tracking-wider text-gray-700">
                 <a href="#" class="text-intechGreen hover:text-intechGreenDark"><i class="fa-solid fa-house text-sm"></i></a>
                 <a href="#" class="hover:text-intechGreen transition">THÔNG TIN TẬP ĐOÀN</a>
@@ -92,11 +72,8 @@
                 <a href="#" class="hover:text-intechGreen transition">LIÊN HỆ</a>
             </nav>
 
-            <!-- Search & Language Picker -->
             <div class="flex items-center space-x-3">
-                <button class="text-gray-600 hover:text-intechGreen transition">
-                    <i class="fa-solid fa-magnifying-glass text-base"></i>
-                </button>
+                <button class="text-gray-600 hover:text-intechGreen transition"><i class="fa-solid fa-magnifying-glass text-base"></i></button>
                 <div class="flex items-center space-x-1 cursor-pointer">
                     <img src="https://flagcdn.com/w20/vn.png" alt="VN Flag" class="w-5 h-auto">
                     <i class="fa-solid fa-caret-down text-xs text-gray-500"></i>
@@ -105,121 +82,369 @@
         </div>
     </header>
 
-    <!-- Main Content Area -->
     <main class="relative">
-        
-        <!-- Hero Banner Background -->
-        <section class="relative w-full h-[480px] lg:h-[520px] overflow-hidden bg-gray-900">
-            <img src="https://intech-group.vn/uploads/banner/le-ra-mat-quy-dieu-uoc-intech.jpg" alt="Lễ ra mắt Quỹ điều ước Intech" class="w-full h-full object-cover object-center opacity-90" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1600'">
+        <!-- HERO BANNER -->
+        <section class="relative w-full h-[380px] lg:h-[450px] overflow-hidden bg-gray-900">
+            <img src="https://intech-group.vn/uploads/banner/le-ra-mat-quy-dieu-uoc-intech.jpg" alt="Banner" class="w-full h-full object-cover object-center opacity-90" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1600'">
         </section>
 
-        <!-- Section: Thống kê chỉ số & Video giới thiệu -->
-        <section class="bg-gray-100 py-12 pt-16 border-b border-gray-200">
+        <!-- THỐNG KÊ & KHÁT VỌNG INTECH -->
+        <section class="bg-gray-100 py-10 border-b border-gray-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <!-- Description Line -->
-                <div class="mb-10 text-gray-700 text-sm sm:text-base">
+                <div class="mb-8 text-gray-700 text-sm sm:text-base">
                     <span class="text-indigo-900 font-semibold">Intech Group</span> kinh doanh bằng cách phụng sự xã hội thông qua các sản phẩm và dịch vụ công nghiệp chất lượng cao.
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    
-                    <!-- 4 Icon Thống kê -->
                     <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-                        
-                        <!-- Metric 1: Kinh nghiệm -->
                         <div class="flex flex-col items-center">
                             <div class="flex items-center justify-center mb-2">
                                 <i class="fa-solid fa-database text-intechGreen text-4xl mr-1"></i>
                                 <span class="text-3xl font-extrabold text-gray-800">15<sup class="text-intechGreen font-bold">+</sup></span>
                             </div>
-                            <span class="text-xs font-bold text-gray-600 uppercase tracking-wider">KINH NGHIỆM</span>
+                            <span class="text-xs font-bold text-gray-600 uppercase">KINH NGHIỆM</span>
                         </div>
-
-                        <!-- Metric 2: Nhân sự -->
                         <div class="flex flex-col items-center">
                             <div class="flex items-center justify-center mb-2">
                                 <i class="fa-solid fa-user-group text-intechGreen text-4xl mr-1"></i>
                                 <span class="text-3xl font-extrabold text-gray-800">500<sup class="text-intechGreen font-bold">+</sup></span>
                             </div>
-                            <span class="text-xs font-bold text-gray-600 uppercase tracking-wider">NHÂN SỰ</span>
+                            <span class="text-xs font-bold text-gray-600 uppercase">NHÂN SỰ</span>
                         </div>
-
-                        <!-- Metric 3: Công ty thành viên -->
                         <div class="flex flex-col items-center">
                             <div class="flex items-center justify-center mb-2">
                                 <i class="fa-solid fa-building text-intechGreen text-4xl mr-1"></i>
                                 <span class="text-3xl font-extrabold text-gray-800">05<sup class="text-intechGreen font-bold">+</sup></span>
                             </div>
-                            <span class="text-xs font-bold text-gray-600 uppercase tracking-wider">CÔNG TY THÀNH VIÊN</span>
+                            <span class="text-xs font-bold text-gray-600 uppercase">CÔNG TY THÀNH VIÊN</span>
                         </div>
-
-                        <!-- Metric 4: Nhà máy -->
                         <div class="flex flex-col items-center">
                             <div class="flex items-center justify-center mb-2">
                                 <i class="fa-solid fa-gears text-intechGreen text-4xl mr-1"></i>
                                 <span class="text-3xl font-extrabold text-gray-800">03<sup class="text-intechGreen font-bold">+</sup></span>
                             </div>
-                            <span class="text-xs font-bold text-gray-600 uppercase tracking-wider">NHÀ MÁY</span>
+                            <span class="text-xs font-bold text-gray-600 uppercase">NHÀ MÁY</span>
                         </div>
-
                     </div>
 
-                    <!-- Video Thumbnail: KHÁT VỌNG INTECH -->
                     <div class="lg:col-span-5">
                         <div class="relative group rounded-xl overflow-hidden shadow-lg border-2 border-intechGreen bg-black cursor-pointer">
-                            <img src="https://intech-group.vn/uploads/video/khat-vong-intech.jpg" alt="Khát Vọng Intech Video" class="w-full h-48 sm:h-56 object-cover opacity-80 group-hover:opacity-100 transition duration-300" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600'">
-                            
-                            <!-- Play Overlay Button -->
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600" alt="Khát Vọng Intech" class="w-full h-48 sm:h-52 object-cover opacity-80 group-hover:opacity-100 transition">
                             <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition duration-300">
+                                <div class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition">
                                     <i class="fa-solid fa-play text-lg translate-x-0.5"></i>
                                 </div>
                             </div>
-
-                            <!-- Bottom Title Banner -->
-                            <div class="absolute bottom-0 inset-x-0 bg-intechGreen/90 text-white text-center py-2 font-black text-lg sm:text-xl tracking-widest uppercase">
+                            <div class="absolute bottom-0 inset-x-0 bg-intechGreen/90 text-white text-center py-2 font-black text-lg tracking-widest uppercase">
                                 KHÁT VỌNG INTECH
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- SECTION: GIỚI THIỆU TAB BÊN PHẢI -->
+        <section class="py-12 bg-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="lg:col-span-8">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1000" alt="Intech Profile" class="w-full h-full object-cover max-h-[380px]">
+                    </div>
+                    <div class="lg:col-span-4 bg-gray-100 flex flex-col justify-center divide-y divide-gray-200 text-xs font-bold text-gray-600">
+                        <a href="#" class="py-3 px-6 hover:bg-white hover:text-intechGreen transition">Giới thiệu về Intech</a>
+                        <a href="#" class="py-3 px-6 hover:bg-white hover:text-intechGreen transition">Lịch sử hình thành</a>
+                        <a href="#" class="py-3 px-6 hover:bg-white hover:text-intechGreen transition">Tôn chỉ hành động</a>
+                        <a href="#" class="py-3 px-6 hover:bg-white hover:text-intechGreen transition">Công ty thành viên</a>
+                        <a href="#" class="py-3 px-6 hover:bg-white hover:text-intechGreen transition">Văn hóa Intech</a>
+                        <a href="#" class="py-3 px-6 hover:bg-white hover:text-intechGreen transition">Đối tác chiến lược</a>
+                        <a href="#" class="py-3 px-6 hover:bg-white hover:text-intechGreen transition">Dự án</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: LĨNH VỰC HOẠT ĐỘNG -->
+        <section class="py-12 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-lg font-bold text-intechGreen tracking-wider uppercase mb-6">LĨNH VỰC HOẠT ĐỘNG</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Card 1 -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-md h-56 cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=400" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-4 text-center">
+                            <i class="fa-solid fa-solar-panel text-intechGreen text-2xl mb-1"></i>
+                            <span class="text-white font-bold text-sm uppercase">Năng Lượng</span>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-md h-56 cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=400" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-4 text-center">
+                            <i class="fa-solid fa-gear text-intechGreen text-2xl mb-1"></i>
+                            <span class="text-white font-bold text-sm uppercase">Cơ Khí</span>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-md h-56 cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-4 text-center">
+                            <i class="fa-solid fa-robot text-intechGreen text-2xl mb-1"></i>
+                            <span class="text-white font-bold text-sm uppercase">Tự Động Hóa</span>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="relative group rounded-lg overflow-hidden shadow-md h-56 cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=400" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-4 text-center">
+                            <i class="fa-solid fa-microchip text-intechGreen text-2xl mb-1"></i>
+                            <span class="text-white font-bold text-sm uppercase">Công Nghệ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: GIẢI PHÁP NỔI BẬT -->
+        <section class="py-12 bg-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-lg font-bold text-intechGreen tracking-wider uppercase mb-8">GIẢI PHÁP NỔI BẬT</h2>
+                <div class="flex items-center justify-between gap-4">
+                    <button class="w-10 h-10 bg-white rounded-full shadow hover:bg-intechGreen hover:text-white transition flex items-center justify-center"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                        <div class="bg-white rounded-lg shadow overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=400" class="w-full h-44 object-cover">
+                            <p class="p-3 font-bold text-xs text-gray-700">Hệ thống phân loại kiện hàng tự động Roto-Sorter</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow overflow-hidden border-2 border-intechGreen">
+                            <img src="https://images.unsplash.com/photo-1586528116493-a029325540fa?q=80&w=400" class="w-full h-44 object-cover">
+                            <p class="p-3 font-bold text-xs text-intechGreen">Kho Pallet Shuttle</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400" class="w-full h-44 object-cover">
+                            <p class="p-3 font-bold text-xs text-gray-700">Giải pháp tự động hóa nhà máy chế biến thực phẩm</p>
+                        </div>
+                    </div>
+                    <button class="w-10 h-10 bg-white rounded-full shadow hover:bg-intechGreen hover:text-white transition flex items-center justify-center"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: DỰ ÁN -->
+        <section class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-lg font-bold text-gray-800 uppercase border-l-4 border-intechGreen pl-3">DỰ ÁN</h2>
+                    <a href="#" class="text-xs text-gray-500 hover:text-intechGreen">Tất cả dự án →</a>
+                </div>
+
+                <!-- Featured Project Card -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 bg-intechGreen text-white rounded-lg overflow-hidden mb-6 shadow-lg">
+                    <div class="lg:col-span-5 p-6 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold uppercase mb-3">Robot AGV kéo hàng cho nhà máy sản xuất bao bì</h3>
+                            <p class="text-xs leading-relaxed text-gray-100">
+                                Robot AGV kéo hàng là một loại robot tự động được sử dụng phổ biến trong các nhà máy sản xuất, bao gồm cả nhà máy sản xuất bao bì. Robot AGV kéo hàng có thể di chuyển nguyên vật liệu, sản phẩm hoàn thiện giữa các khu vực sản xuất tự động và hiệu quả.
+                            </p>
+                        </div>
+                        <a href="#" class="inline-block mt-4 text-xs bg-white text-intechGreen font-bold px-4 py-2 rounded shadow w-max hover:bg-gray-100 transition">Xem thêm →</a>
+                    </div>
+                    <div class="lg:col-span-7">
+                        <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=800" class="w-full h-full object-cover max-h-72">
+                    </div>
+                </div>
+
+                <!-- Sub Projects Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=300" class="w-full h-32 object-cover">
+                        <p class="p-3 text-xs font-bold text-gray-800 line-clamp-2">Giải pháp tự động hóa khâu đóng gói cho nhà máy xi măng Hòa Phát</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=300" class="w-full h-32 object-cover">
+                        <p class="p-3 text-xs font-bold text-gray-800 line-clamp-2">Giải pháp tự động hóa cho dây chuyền sản xuất đồ gia dụng</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow">
+                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=300" class="w-full h-32 object-cover">
+                        <p class="p-3 text-xs font-bold text-gray-800 line-clamp-2">Dây chuyền tự động hóa trong nhà máy sản xuất linh kiện</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg overflow-hidden shadow">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=300" class="w-full h-32 object-cover">
+                        <p class="p-3 text-xs font-bold text-gray-800 line-clamp-2">Dây chuyền tự động hóa cho ngành sản xuất màng bọc thực phẩm</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: TIN TỨC & BÁO CHÍ -->
+        <section class="py-12 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <!-- Tin tức -->
+                    <div class="lg:col-span-8">
+                        <h2 class="text-sm font-bold text-gray-800 uppercase mb-4">TIN TỨC & SỰ KIỆN</h2>
+                        <div class="bg-intechGreen text-white rounded-lg overflow-hidden shadow flex flex-col sm:flex-row mb-6">
+                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=400" class="sm:w-1/2 object-cover h-48 sm:h-auto">
+                            <div class="p-4 flex flex-col justify-between">
+                                <div>
+                                    <h3 class="font-bold text-sm uppercase mb-2">Giải pháp đột phá của robot trong sản xuất công nghiệp</h3>
+                                    <p class="text-xs text-gray-200 leading-relaxed">Intech mang đến các giải pháp robot công nghiệp đột phá trong sản xuất giúp nâng cao năng suất, giảm chi phí và cải thiện chất lượng...</p>
+                                </div>
+                                <a href="#" class="inline-block mt-3 text-xs bg-white text-intechGreen font-bold px-3 py-1.5 rounded w-max">Xem thêm →</a>
+                            </div>
+                        </div>
+
+                        <!-- 4 Small News -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="flex space-x-3 bg-white p-2 rounded shadow">
+                                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=150" class="w-16 h-16 object-cover rounded">
+                                <div class="text-xs">
+                                    <h4 class="font-bold text-gray-800 line-clamp-2">Ứng dụng thiết bị phân loại công nghiệp tự động hóa năm 2026</h4>
+                                    <span class="text-gray-400 text-[10px]">15/08/2026 | Intech Group</span>
+                                </div>
+                            </div>
+                            <div class="flex space-x-3 bg-white p-2 rounded shadow">
+                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=150" class="w-16 h-16 object-cover rounded">
+                                <div class="text-xs">
+                                    <h4 class="font-bold text-gray-800 line-clamp-2">Băng tải tự động hóa nổi bật nhờ tính ứng dụng cao</h4>
+                                    <span class="text-gray-400 text-[10px]">10/08/2026 | Intech Group</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Báo chí -->
+                    <div class="lg:col-span-4">
+                        <h2 class="text-sm font-bold text-gray-800 uppercase mb-4">BÁO CHÍ VIẾT</h2>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-white border p-3 rounded flex items-center justify-center font-bold text-red-600 text-xs shadow-sm">Cafef</div>
+                            <div class="bg-white border p-3 rounded flex items-center justify-center font-bold text-blue-800 text-xs shadow-sm">VnExpress</div>
+                            <div class="bg-white border p-3 rounded flex items-center justify-center font-bold text-red-700 text-xs shadow-sm">Dân Trí</div>
+                            <div class="bg-white border p-3 rounded flex items-center justify-center font-bold text-red-500 text-xs shadow-sm">VTV</div>
+                            <div class="bg-white border p-3 rounded flex items-center justify-center font-bold text-green-700 text-xs shadow-sm">VietnamBiz</div>
+                            <div class="bg-white border p-3 rounded flex items-center justify-center font-bold text-red-600 text-xs shadow-sm">Tiền Phong</div>
+                            <div class="bg-white border p-3 rounded flex items-center justify-center font-bold text-blue-600 text-xs shadow-sm">Dầu Tư</div>
+                            <div class="bg-white border p-3 rounded flex items-center justify-center font-bold text-indigo-900 text-xs shadow-sm">VnEconomy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SOCIAL FEEDS -->
+        <section class="py-10 bg-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-sm font-bold text-gray-800 uppercase mb-6">THEO DÕI CHÚNG TÔI TRÊN CÁC MẠNG XÃ HỘI</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Facebook Feed -->
+                    <div class="bg-white p-3 rounded shadow">
+                        <h3 class="font-bold text-xs text-blue-600 mb-2 uppercase">FACEBOOK</h3>
+                        <div class="bg-gray-100 border h-64 flex flex-col items-center justify-center text-gray-400 text-xs">
+                            <i class="fa-brands fa-square-facebook text-4xl mb-2 text-blue-600"></i>
+                            <span>Facebook Fanpage Widget</span>
+                        </div>
+                    </div>
+                    <!-- Youtube Embed -->
+                    <div class="bg-white p-3 rounded shadow">
+                        <h3 class="font-bold text-xs text-red-600 mb-2 uppercase">YOUTUBE</h3>
+                        <div class="bg-gray-900 h-64 rounded flex flex-col items-center justify-center text-white p-4 text-center">
+                            <img src="https://intech-group.vn/uploads/logo/logo-intech.png" class="h-10 mb-3 bg-white p-1 rounded" onerror="this.src='https://via.placeholder.com/100x30'">
+                            <span class="text-xs font-bold mb-3">Kiến tạo tương lai!</span>
+                            <button class="bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-4 py-2 rounded flex items-center gap-2">
+                                <i class="fa-brands fa-youtube"></i> Đăng ký ngay
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Zalo Widget -->
+                    <div class="bg-white p-3 rounded shadow">
+                        <h3 class="font-bold text-xs text-blue-500 mb-2 uppercase">ZALO</h3>
+                        <div class="bg-blue-50 border border-blue-200 h-64 rounded flex flex-col items-center justify-center text-blue-600">
+                            <i class="fa-solid fa-comment-dots text-4xl mb-2"></i>
+                            <span class="text-xs font-bold">Zalo Official Account</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ĐỐI TÁC -->
+        <section class="py-8 bg-white border-t border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-xs font-bold text-gray-500 uppercase mb-6 tracking-widest">ĐỐI TÁC</h2>
+                <div class="flex flex-wrap items-center justify-center gap-8 lg:gap-12 opacity-80">
+                    <span class="font-black text-xl text-gray-800 tracking-tighter">MISUMI</span>
+                    <span class="font-bold text-lg text-blue-900">Bonfiglioli</span>
+                    <span class="font-black text-2xl text-blue-600">SICK</span>
+                    <span class="font-black text-xl text-red-600 italic">SEW EURODRIVE</span>
+                    <span class="font-bold text-lg text-blue-500">TSUBAKI</span>
+                    <span class="font-bold text-lg text-red-600">MITSUBISHI</span>
+                    <span class="font-black text-xl text-orange-600">KUKA</span>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Floating Action Buttons (Nút liên hệ cố định bên phải) -->
-    <div class="fixed right-4 bottom-20 z-40 flex flex-col space-y-3">
-        <a href="tel:0986448456" title="Gọi ngay" class="w-11 h-11 bg-lime-600 hover:bg-lime-700 text-white rounded-full flex items-center justify-center shadow-xl transition transform hover:scale-110">
-            <i class="fa-solid fa-phone text-lg"></i>
-        </a>
-        <a href="https://zalo.me" target="_blank" title="Zalo Chat" class="w-11 h-11 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center shadow-xl transition transform hover:scale-110 font-bold text-xs">
-            Zalo
-        </a>
-        <a href="https://youtube.com" target="_blank" title="Xem Youtube" class="w-11 h-11 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center shadow-xl transition transform hover:scale-110">
-            <i class="fa-brands fa-youtube text-lg"></i>
-        </a>
-        <a href="mailto:contact@intech-group.vn" title="Gửi Email" class="w-11 h-11 bg-indigo-900 hover:bg-black text-white rounded-full flex items-center justify-center shadow-xl transition transform hover:scale-110">
-            <i class="fa-solid fa-envelope text-lg"></i>
-        </a>
+    <!-- FLOATING ACTION BUTTONS -->
+    <div class="fixed right-4 bottom-12 z-40 flex flex-col space-y-3">
+        <a href="tel:0986448456" title="Gọi ngay" class="w-11 h-11 bg-lime-600 text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://zalo.me" target="_blank" title="Zalo" class="w-11 h-11 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition font-bold text-xs">Zalo</a>
+        <a href="https://youtube.com" target="_blank" title="Youtube" class="w-11 h-11 bg-red-600 text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition"><i class="fa-brands fa-youtube"></i></a>
+        <a href="mailto:contact@intech-group.vn" title="Email" class="w-11 h-11 bg-indigo-900 text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition"><i class="fa-solid fa-envelope"></i></a>
     </div>
 
-    <!-- Script xử lý Đóng Modal Popup -->
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-gray-200 text-gray-700 text-xs border-t border-gray-300">
+        <div class="bg-gray-300 py-3 text-center font-bold text-intechGreen text-xs tracking-wide">
+            CÔNG TY CỔ PHẦN TẬP ĐOÀN KỸ THUẬT VÀ CÔNG NGHIỆP VIỆT NAM<br>
+            <span class="text-[10px] text-gray-600 font-normal">MST: 0105655405 do Sở Kế Hoạch Đầu Tư TP.Hà Nội cấp ngày 18/11/2011.</span>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Brand -->
+            <div>
+                <h4 class="font-bold border-b-2 border-intechGreen pb-1 mb-3 text-intechGreen uppercase">THƯƠNG HIỆU</h4>
+                <img src="https://intech-group.vn/uploads/logo/logo-intech.png" class="h-10 mb-2 object-contain" onerror="this.src='https://via.placeholder.com/120x40'">
+                <p class="text-[10px] text-gray-500">ISO 9001:2015 & CE Certified Quality System</p>
+            </div>
+
+            <!-- Hà Nội -->
+            <div>
+                <h4 class="font-bold border-b-2 border-intechGreen pb-1 mb-3 text-intechGreen uppercase">NHÀ MÁY HÀ NỘI</h4>
+                <p class="mb-1"><i class="fa-solid fa-location-dot text-intechGreen mr-1"></i> Lô 5-6, Cụm Công Nghiệp Lai Xá, Kim Chung, Hoài Đức, Hà Nội</p>
+                <p class="mb-1"><i class="fa-solid fa-phone text-intechGreen mr-1"></i> 0986.448.456 - 0972.505.005</p>
+                <p><i class="fa-solid fa-envelope text-intechGreen mr-1"></i> info@intech-group.vn</p>
+            </div>
+
+            <!-- Đà Nẵng -->
+            <div>
+                <h4 class="font-bold border-b-2 border-intechGreen pb-1 mb-3 text-intechGreen uppercase">VĂN PHÒNG ĐÀ NẴNG</h4>
+                <p class="mb-1"><i class="fa-solid fa-location-dot text-intechGreen mr-1"></i> số 151 Bùi Tấn Diên, P. Hòa Minh, Q. Liên Chiểu, TP. Đà Nẵng</p>
+                <p class="mb-1"><i class="fa-solid fa-phone text-intechGreen mr-1"></i> 0983.113.387</p>
+                <p><i class="fa-solid fa-envelope text-intechGreen mr-1"></i> info@intech-group.vn</p>
+            </div>
+
+            <!-- Hồ Chí Minh -->
+            <div>
+                <h4 class="font-bold border-b-2 border-intechGreen pb-1 mb-3 text-intechGreen uppercase">NHÀ MÁY HỒ CHÍ MINH</h4>
+                <p class="mb-1"><i class="fa-solid fa-location-dot text-intechGreen mr-1"></i> Lô D6, đường số 3, KCN Bình Chiểu, TP. Thủ Đức, TP. Hồ Chí Minh</p>
+                <p class="mb-1"><i class="fa-solid fa-phone text-intechGreen mr-1"></i> 0981.518.001 - 0987.505.001</p>
+                <p><i class="fa-solid fa-envelope text-intechGreen mr-1"></i> info@intech-group.vn</p>
+            </div>
+        </div>
+
+        <div class="bg-gray-300 border-t border-gray-400 py-3 text-center text-[11px] text-gray-600">
+            Copyright © 2026 intech-group.vn All Rights Reserved
+        </div>
+    </footer>
+
     <script>
         function closeModal() {
             const modal = document.getElementById('consultModal');
-            if (modal) {
-                modal.classList.add('hidden');
-            }
+            if (modal) modal.classList.add('hidden');
         }
-
-        // Tùy chọn: Đóng khi nhấp ra ngoài hộp thoại
-        window.onclick = function(event) {
+        window.onclick = function(e) {
             const modal = document.getElementById('consultModal');
-            if (event.target === modal) {
-                closeModal();
-            }
+            if (e.target === modal) closeModal();
         }
     </script>
 </body>
