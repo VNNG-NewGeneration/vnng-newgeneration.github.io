@@ -1,333 +1,551 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VNPAY-QR - Thanh toán linh hoạt, đa dạng nguồn tiền</title>
-  <meta name="description" content="VNPAY-QR là giải pháp thanh toán qua mã QR tích hợp trên các ứng dụng ngân hàng và ví điện tử.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VNPAY-QR | Thanh toán linh hoạt, đa dạng nguồn tiền</title>
+  <meta name="description" content="VNPAY-QR là giải pháp thanh toán qua mã QR tích hợp trên ứng dụng ngân hàng và ví điện tử, hỗ trợ đa dạng nguồn tiền và mạng lưới điểm chấp nhận rộng khắp.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#0066b3">
+  <link rel="canonical" href="https://vnpay.vn/vnpay-qr">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VNPAY-QR | Thanh toán linh hoạt, đa dạng nguồn tiền">
+  <meta property="og:description" content="Quét VNPAY-QR trên ứng dụng ngân hàng và ví điện tử để thanh toán nhanh chóng, linh hoạt.">
+  <meta property="og:url" content="https://vnpay.vn/vnpay-qr">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --blue:#0066b3;
-      --blue2:#0088d1;
-      --navy:#073b70;
-      --red:#ed1c24;
-      --text:#172b4d;
-      --muted:#6b7a90;
-      --bg:#f5f9fd;
-      --line:#e7edf5;
-      --shadow:0 12px 35px rgba(16,58,105,.10);
+      --blue:#0066b3;--blue-dark:#00508e;--cyan:#12a8e0;--red:#e91b2b;
+      --navy:#082d55;--ink:#16324f;--muted:#6f8297;--soft:#f5f9fd;
+      --line:#e6edf4;--white:#fff;--shadow:0 18px 45px rgba(7,58,106,.10);
+      --radius:18px;--max:1200px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff}
-    a{text-decoration:none;color:inherit}
-    .container{width:min(1180px,92%);margin:auto}
+    body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+    body.no-scroll{overflow:hidden}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(var(--max),92%);margin-inline:auto}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-    /* Header */
-    .topbar{height:34px;background:#f3f7fb;border-bottom:1px solid #e8eef5;font-size:13px;color:#62738b}
-    .topbar .container{height:100%;display:flex;align-items:center;justify-content:flex-end;gap:24px}
-    .topbar a:hover{color:var(--blue)}
-    header{height:76px;background:#fff;position:sticky;top:0;z-index:50;border-bottom:1px solid #edf1f5}
-    .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:10px;min-width:180px}
-    .brand-mark{width:44px;height:44px;border:3px solid var(--blue);border-radius:50%;display:grid;place-items:center;color:var(--blue);font-weight:800;font-size:12px;position:relative}
-    .brand-mark:after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:var(--red);top:2px;right:1px}
-    .brand strong{display:block;color:#0c4177;font-size:20px;letter-spacing:.5px}
-    .brand span{display:block;color:#8a98a9;font-size:10px;margin-top:2px}
-    nav{display:flex;align-items:center;gap:27px;font-size:14px;font-weight:600;color:#344b68}
-    nav a:hover,nav a.active{color:var(--blue)}
-    .header-actions{display:flex;align-items:center;gap:15px}
-    .hotline{font-size:12px;color:#687b91;white-space:nowrap}
-    .hotline b{color:var(--blue)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:7px;padding:12px 21px;font-weight:700;cursor:pointer;transition:.2s}
-    .btn-primary{background:var(--blue);color:#fff;box-shadow:0 6px 15px rgba(0,102,179,.2)}
-    .btn-primary:hover{background:#00518f;transform:translateY(-1px)}
-    .mobile-menu{display:none;font-size:25px;color:var(--blue)}
+    /* ===== TOP / HEADER ===== */
+    .topline{height:36px;background:#f6f9fc;border-bottom:1px solid #e9eff5;color:#71839a;font-size:12px}
+    .topline .container{height:100%;display:flex;align-items:center;justify-content:flex-end;gap:24px}
+    .topline a:hover{color:var(--blue)}
+    .topline .lang{display:flex;align-items:center;gap:6px}
 
-    /* Hero */
-    .hero{background:linear-gradient(110deg,#005ca8 0%,#007bc4 55%,#00a2df 100%);color:#fff;overflow:hidden}
-    .hero-grid{min-height:520px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:50px;padding:60px 0}
-    .eyebrow{display:inline-flex;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);border-radius:30px;padding:8px 15px;font-size:13px;font-weight:700;margin-bottom:20px}
-    h1{font-size:46px;line-height:1.15;margin:0 0 18px;letter-spacing:-1px}
-    .hero p{font-size:18px;line-height:1.65;color:#e8f6ff;max-width:650px;margin:0 0 28px}
-    .hero-buttons{display:flex;gap:13px;flex-wrap:wrap}
-    .btn-light{background:#fff;color:var(--blue)}
-    .btn-outline{border:1px solid rgba(255,255,255,.55);color:#fff;background:transparent}
-    .btn-outline:hover{background:rgba(255,255,255,.1)}
-    .qr-card{position:relative;display:flex;justify-content:center;align-items:center}
-    .qr-phone{width:280px;height:410px;border:9px solid #102b48;border-radius:38px;background:#fff;box-shadow:0 30px 60px rgba(0,35,80,.35);padding:28px 22px;color:#16385c;transform:rotate(2deg)}
-    .phone-top{width:75px;height:5px;border-radius:10px;background:#dfe7ee;margin:0 auto 25px}
-    .qr-title{text-align:center;font-weight:800;font-size:17px;margin-bottom:18px}
-    .qr-code{width:170px;height:170px;margin:auto;background:
-      linear-gradient(90deg,#111 10px,transparent 10px 20px,#111 20px 30px,transparent 30px 42px,#111 42px 52px,transparent 52px 66px,#111 66px 75px,transparent 75px 88px,#111 88px 100px,transparent 100px 113px,#111 113px 123px,transparent 123px 136px,#111 136px 145px,transparent 145px 157px,#111 157px 170px),
-      linear-gradient(#111 10px,transparent 10px 21px,#111 21px 31px,transparent 31px 43px,#111 43px 54px,transparent 54px 66px,#111 66px 77px,transparent 77px 89px,#111 89px 99px,transparent 99px 112px,#111 112px 123px,transparent 123px 136px,#111 136px 147px,transparent 147px 158px,#111 158px 170px);
-      background-blend-mode:multiply;position:relative;overflow:hidden}
-    .qr-code:before,.qr-code:after{content:"";position:absolute;width:43px;height:43px;border:8px solid #111;background:#fff}
-    .qr-code:before{left:4px;top:4px}
-    .qr-code:after{right:4px;bottom:4px}
-    .qr-label{text-align:center;color:#77889b;font-size:12px;margin-top:18px}
-    .float-bubble{position:absolute;background:#fff;color:var(--blue);font-weight:800;padding:12px 18px;border-radius:13px;box-shadow:var(--shadow);font-size:13px}
-    .bubble1{top:28px;right:15px}.bubble2{bottom:35px;left:5px}
+    .header{height:78px;background:rgba(255,255,255,.97);border-bottom:1px solid #edf1f5;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+    .header-inner{height:100%;display:flex;align-items:center;gap:34px}
+    .logo{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+    .logo-mark{width:48px;height:48px;border:2.5px solid #0874bd;border-radius:50%;display:grid;place-items:center;color:#0874bd;font-size:9px;font-weight:800;line-height:1.05;position:relative;background:#fff}
+    .logo-mark:before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--red);right:1px;top:3px}
+    .logo-copy b{display:block;color:#0871b9;font-size:20px;letter-spacing:.2px}
+    .logo-copy span{display:block;color:#7f91a4;font-size:8.5px;margin-top:1px;white-space:nowrap}
+    .main-nav{display:flex;align-items:center;gap:27px;margin-left:auto}
+    .main-nav a{font-size:13px;font-weight:600;color:#455a70;position:relative;padding:29px 0}
+    .main-nav a:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--blue);transform:scaleX(0);transition:.2s}
+    .main-nav a:hover,.main-nav a.active{color:var(--blue)}
+    .main-nav a:hover:after,.main-nav a.active:after{transform:scaleX(1)}
+    .header-contact{display:flex;align-items:center;gap:12px;margin-left:8px}
+    .hotline{font-size:11px;color:#728399;white-space:nowrap}
+    .hotline strong{color:var(--blue)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:8px;border:1px solid transparent;padding:11px 19px;font-weight:700;font-size:13px;transition:.2s;cursor:pointer}
+    .btn-blue{background:var(--blue);color:#fff;box-shadow:0 7px 18px rgba(0,102,179,.18)}
+    .btn-blue:hover{background:var(--blue-dark);transform:translateY(-1px)}
+    .btn-white{background:#fff;color:var(--blue)}
+    .btn-outline{border-color:#d3e3f0;color:var(--blue);background:#fff}
+    .hamburger{display:none;margin-left:auto;border:0;background:none;font-size:26px;color:var(--blue);cursor:pointer}
 
-    /* Stats */
-    .stats{background:#fff;box-shadow:0 8px 30px rgba(20,60,100,.08);position:relative;margin-top:-28px;border-radius:16px;padding:25px 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-    .stat{text-align:center;border-right:1px solid var(--line)}
+    /* ===== HERO ===== */
+    .hero{position:relative;overflow:hidden;background:
+      radial-gradient(circle at 82% 30%,rgba(55,197,247,.45),transparent 27%),
+      linear-gradient(112deg,#005ba5 0%,#0078c5 55%,#08a8df 100%);color:#fff}
+    .hero:before{content:"";position:absolute;inset:0;opacity:.14;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:18px 18px}
+    .hero-inner{min-height:545px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:60px;position:relative;padding:60px 0}
+    .hero-copy{max-width:650px}
+    .hero-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:30px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);font-size:11px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;margin-bottom:20px}
+    .hero h1{font-size:48px;line-height:1.12;letter-spacing:-1.6px;margin:0 0 18px}
+    .hero h1 span{color:#ffe37d}
+    .hero-lead{font-size:17px;color:#e8f7ff;max-width:650px;margin:0 0 26px}
+    .hero-actions{display:flex;gap:11px;flex-wrap:wrap}
+    .hero-note{margin-top:19px;font-size:11px;color:#d6effb;display:flex;gap:16px;flex-wrap:wrap}
+    .hero-note span{display:flex;align-items:center;gap:6px}
+
+    .hero-art{min-height:430px;position:relative;display:grid;place-items:center}
+    .glow{position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.08);filter:blur(2px)}
+    .phone{width:270px;height:465px;border:8px solid #0b2d4e;border-radius:38px;background:#f8fbfe;box-shadow:0 30px 80px rgba(0,35,70,.38);position:relative;padding:24px 18px;color:#143d63;transform:rotate(4deg);z-index:2}
+    .phone:before{content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);width:74px;height:5px;border-radius:10px;background:#d5dfe8}
+    .phone-head{font-size:13px;font-weight:800;text-align:center;margin:22px 0 12px}
+    .scan-label{text-align:center;font-size:10px;color:#7890a7;margin-bottom:14px}
+    .qr{width:168px;height:168px;margin:auto;position:relative;background:
+      repeating-linear-gradient(0deg,#111 0 5px,#fff 5px 10px),
+      repeating-linear-gradient(90deg,rgba(0,0,0,.95) 0 5px,transparent 5px 10px);
+      border:8px solid #fff;box-shadow:0 0 0 1px #d9e2eb}
+    .qr:before,.qr:after{content:"";position:absolute;width:38px;height:38px;border:7px solid #111;background:#fff}
+    .qr:before{left:3px;top:3px}.qr:after{right:3px;bottom:3px}
+    .qr-mini{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:30px;height:30px;background:#fff;border:4px solid #0875bc;border-radius:5px}
+    .pay-info{margin-top:17px;border:1px solid #e4ebf2;border-radius:11px;padding:11px;background:#fff}
+    .pay-info b{display:block;font-size:10px}.pay-info span{font-size:9px;color:#8a9aae}
+    .bubble{position:absolute;background:#fff;color:var(--blue);box-shadow:0 14px 32px rgba(0,40,80,.2);border-radius:13px;padding:11px 15px;font-size:11px;font-weight:800;z-index:4}
+    .bubble.one{right:0;top:58px}.bubble.two{left:0;bottom:45px}
+    .bubble i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#27c779;margin-right:7px}
+
+    /* ===== STATS ===== */
+    .stats{position:relative;margin-top:-28px;z-index:5;background:#fff;border-radius:16px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(4,1fr);padding:24px 12px}
+    .stat{text-align:center;border-right:1px solid var(--line);padding:0 15px}
     .stat:last-child{border-right:0}
-    .stat strong{display:block;color:var(--blue);font-size:31px;margin-bottom:5px}
-    .stat span{font-size:13px;color:#718198}
+    .stat strong{display:block;color:var(--blue);font-size:30px;line-height:1.1;margin-bottom:6px}
+    .stat span{font-size:11px;color:#7a8da1}
 
-    /* Sections */
+    /* ===== COMMON ===== */
     section{padding:82px 0}
-    .section-head{text-align:center;max-width:760px;margin:0 auto 45px}
-    .section-head .tag{display:inline-block;color:var(--blue);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
-    .section-head h2{font-size:34px;line-height:1.25;margin:0 0 13px}
-    .section-head p{color:var(--muted);font-size:16px;line-height:1.65;margin:0}
+    .section-title{text-align:center;max-width:780px;margin:0 auto 43px}
+    .section-title .eyebrow{display:inline-block;color:var(--blue);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.6px;margin-bottom:10px}
+    .section-title h2{font-size:34px;line-height:1.22;letter-spacing:-.7px;margin:0 0 12px;color:#153451}
+    .section-title p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
 
-    .promo{background:var(--bg)}
-    .promo-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:25px}
-    .promo-main,.promo-side{background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
-    .promo-visual{height:260px;background:linear-gradient(135deg,#0074c5,#18b5ea);position:relative;overflow:hidden}
-    .promo-visual:before{content:"VNPAY-QR";position:absolute;right:-30px;bottom:-30px;font-size:100px;font-weight:900;color:rgba(255,255,255,.09);transform:rotate(-12deg)}
-    .promo-visual .ticket{position:absolute;background:#fff;border-radius:14px;padding:20px 26px;left:12%;top:55px;box-shadow:0 20px 35px rgba(0,30,70,.18);transform:rotate(-5deg)}
-    .ticket b{display:block;color:var(--blue);font-size:25px}.ticket small{color:#73859a}
-    .promo-copy{padding:25px}
-    .promo-copy h3{font-size:21px;margin:0 0 10px}.promo-copy p{color:var(--muted);line-height:1.65;margin:0 0 16px;font-size:14px}
-    .read-more{color:var(--blue);font-weight:700;font-size:14px}
-    .side-card{padding:25px}
-    .side-icon{width:52px;height:52px;border-radius:14px;background:#e9f6ff;color:var(--blue);display:grid;place-items:center;font-size:25px;margin-bottom:18px}
-    .side-card h3{font-size:20px;margin:0 0 10px}.side-card p{color:var(--muted);line-height:1.65;font-size:14px}
+    /* ===== PROMO ===== */
+    .promo-section{background:#f7fbfe}
+    .promo-layout{display:grid;grid-template-columns:1.18fr .82fr;gap:22px}
+    .promo-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 10px 32px rgba(10,65,110,.06)}
+    .promo-main-visual{height:290px;background:linear-gradient(120deg,#0064af,#09a8df);position:relative;overflow:hidden}
+    .promo-main-visual:before{content:"VNPAY-QR";position:absolute;right:-25px;bottom:-48px;font-size:92px;font-weight:900;color:rgba(255,255,255,.08);transform:rotate(-8deg)}
+    .travel-ticket{position:absolute;left:10%;top:55px;width:380px;max-width:80%;background:#fff;border-radius:17px;padding:22px;box-shadow:0 20px 50px rgba(0,36,80,.2);transform:rotate(-4deg)}
+    .travel-ticket small{color:#7b8fa3;font-size:10px}.travel-ticket h3{margin:5px 0;color:#075c9f;font-size:24px}.travel-ticket .line{height:1px;background:#e5ebf1;margin:12px 0}.travel-ticket footer{display:flex;justify-content:space-between;font-size:10px;color:#7c8fa1}
+    .promo-content{padding:24px}.promo-content h3{font-size:20px;margin:0 0 9px}.promo-content p{font-size:13px;color:var(--muted);line-height:1.7;margin:0 0 15px}
+    .promo-side{display:grid;grid-template-rows:1fr 1fr;gap:22px}
+    .mini-promo{padding:24px;position:relative;overflow:hidden}
+    .mini-promo.blue{background:linear-gradient(135deg,#eaf7ff,#fff)}
+    .mini-promo.white{background:#fff}
+    .mini-badge{width:48px;height:48px;border-radius:14px;background:#e6f5ff;color:var(--blue);display:grid;place-items:center;font-weight:800;margin-bottom:15px}
+    .mini-promo h3{font-size:17px;margin:0 0 7px}.mini-promo p{font-size:12px;color:var(--muted);margin:0;line-height:1.65}
 
-    /* Steps */
-    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-    .step{position:relative;text-align:center;padding:25px 18px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 25px rgba(20,60,100,.05)}
-    .step-number{width:48px;height:48px;border-radius:50%;background:#e8f5ff;color:var(--blue);display:grid;place-items:center;font-weight:800;font-size:17px;margin:0 auto 17px}
-    .step h3{font-size:16px;margin:0 0 8px}.step p{font-size:13px;color:var(--muted);line-height:1.55;margin:0}
+    /* ===== STEPS ===== */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{background:#fff;border:1px solid var(--line);border-radius:17px;padding:25px 19px;text-align:center;box-shadow:0 9px 25px rgba(20,70,110,.045);transition:.22s}
+    .step:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#c8e1f2}
+    .step-no{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#e9f6ff;color:var(--blue);font-weight:800;margin:0 auto 15px}
+    .step h3{font-size:15px;margin:0 0 8px}.step p{font-size:12px;color:var(--muted);line-height:1.65;margin:0}
 
-    /* Payment logos */
-    .logos-section{background:#f8fbfe}
-    .logo-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:30px}
-    .tab{padding:10px 18px;border-radius:30px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:700;color:#687b91}
-    .tab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
-    .logo-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:13px}
-    .logo-item{background:#fff;border:1px solid var(--line);height:82px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#45617f;font-size:13px;transition:.2s}
-    .logo-item:hover{border-color:#a8d5f3;transform:translateY(-2px);box-shadow:var(--shadow)}
-    .logo-item span{display:block;text-align:center}
-    .logo-item small{display:block;font-weight:500;color:#9aa8b8;margin-top:4px}
+    /* ===== PARTNERS ===== */
+    .partners{background:#f7fbfe}
+    .source-tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+    .source-tab{border:1px solid #dce8f1;background:#fff;color:#687d92;padding:10px 17px;border-radius:30px;font-size:12px;font-weight:700;cursor:pointer}
+    .source-tab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+    .source-panel{display:none}.source-panel.active{display:block}
+    .partner-title{font-size:14px;font-weight:800;color:#34536f;margin:0 0 15px}
+    .logo-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+    .bank-logo{height:72px;background:#fff;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;text-align:center;padding:8px;transition:.2s}
+    .bank-logo:hover{border-color:#a7d4ef;transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,80,140,.08)}
+    .bank-logo b{font-size:12px;color:#345b7c}.bank-logo small{display:block;color:#9aaaba;font-size:8px;margin-top:3px}
+    .group-gap{margin-top:34px}
 
-    /* FAQ */
+    /* ===== INTERNATIONAL ===== */
+    .international{background:#fff}
+    .country-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+    .country{min-height:110px;border:1px solid var(--line);border-radius:15px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;box-shadow:0 7px 22px rgba(10,65,110,.035)}
+    .flag{font-size:30px}.country b{font-size:12px;color:#46637c}
+
+    /* ===== FAQ ===== */
     .faq{max-width:900px;margin:auto}
-    details{background:#fff;border:1px solid var(--line);border-radius:13px;margin-bottom:12px;padding:0 20px}
-    summary{cursor:pointer;list-style:none;padding:20px 0;font-weight:700;font-size:15px;display:flex;justify-content:space-between;gap:20px}
+    details{background:#fff;border:1px solid var(--line);border-radius:13px;margin-bottom:11px;padding:0 20px;box-shadow:0 5px 16px rgba(20,70,110,.025)}
+    summary{cursor:pointer;list-style:none;padding:18px 0;display:flex;justify-content:space-between;gap:20px;font-size:14px;font-weight:700;color:#1b3855}
     summary::-webkit-details-marker{display:none}
-    summary:after{content:"+";color:var(--blue);font-size:22px}
+    summary:after{content:"+";color:var(--blue);font-size:22px;font-weight:500}
     details[open] summary:after{content:"−"}
-    details p{color:var(--muted);font-size:14px;line-height:1.7;margin:0;padding:0 0 20px}
+    details p{font-size:12.5px;color:var(--muted);line-height:1.75;margin:0;padding:0 0 19px}
 
-    /* CTA */
-    .cta{background:linear-gradient(105deg,#004e94,#007bc5);color:#fff;text-align:center}
-    .cta h2{font-size:35px;margin:0 0 12px}.cta p{color:#dff2ff;margin:0 auto 25px;max-width:650px;line-height:1.6}
+    /* ===== CTA ===== */
+    .cta{background:linear-gradient(110deg,#00528f,#0088cf);color:#fff;text-align:center;position:relative;overflow:hidden}
+    .cta:before{content:"";position:absolute;width:450px;height:450px;border-radius:50%;background:rgba(255,255,255,.06);right:-100px;top:-250px}
+    .cta h2{position:relative;font-size:33px;margin:0 0 11px}.cta p{position:relative;color:#dff4ff;max-width:650px;margin:0 auto 23px;font-size:14px}
 
-    /* Footer */
-    footer{background:#082b4e;color:#a9c0d6;padding:55px 0 25px}
-    .footer-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:50px;padding-bottom:35px;border-bottom:1px solid rgba(255,255,255,.1)}
-    footer h3{color:#fff;font-size:15px;margin:0 0 16px}
-    footer p,footer li{font-size:13px;line-height:1.75}
-    footer ul{list-style:none;padding:0;margin:0}footer li{margin-bottom:7px}
-    .footer-brand strong{color:#fff;font-size:20px}.footer-brand p{max-width:410px}
-    .copyright{text-align:center;font-size:12px;color:#7893ac;padding-top:22px}
+    /* ===== FOOTER ===== */
+    footer{background:#072b4e;color:#9db6cd;padding:54px 0 25px}
+    .footer-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr;gap:36px;padding-bottom:35px;border-bottom:1px solid rgba(255,255,255,.1)}
+    .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}.footer-logo strong{color:#fff;font-size:19px}
+    footer h3{color:#fff;font-size:13px;margin:0 0 14px}.footer-text{font-size:11.5px;line-height:1.8;margin:0}
+    footer ul{list-style:none;padding:0;margin:0}footer li{font-size:11.5px;line-height:1.8;margin-bottom:6px}
+    footer a:hover{color:#fff}.copyright{text-align:center;padding-top:20px;font-size:10px;color:#718ba4}
 
-    @media(max-width:1050px){
-      nav{gap:16px;font-size:13px}.hotline{display:none}
-      .hero-grid{grid-template-columns:1fr}.qr-card{display:none}
-      .promo-grid{grid-template-columns:1fr}.logo-grid{grid-template-columns:repeat(4,1fr)}
+    /* ===== FLOATING ===== */
+    .float-actions{position:fixed;right:18px;bottom:20px;z-index:90;display:flex;flex-direction:column;gap:9px}
+    .float-btn{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;box-shadow:0 9px 22px rgba(0,0,0,.17);transition:.2s}
+    .float-btn:hover{transform:scale(1.07)}.zalo{background:#1688f0}.call{background:#18a75b}
+
+    /* ===== MOBILE MENU ===== */
+    .mobile-nav{position:fixed;inset:0 0 0 auto;width:min(340px,86%);background:#fff;z-index:200;box-shadow:-20px 0 50px rgba(0,30,70,.18);padding:25px;transform:translateX(100%);transition:.25s}
+    .mobile-nav.open{transform:translateX(0)}
+    .mobile-nav .close{border:0;background:none;font-size:26px;color:#49657d;float:right;cursor:pointer}
+    .mobile-nav .mobile-logo{clear:both;padding:30px 0 20px;border-bottom:1px solid var(--line)}
+    .mobile-nav a{display:block;padding:16px 0;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
+    .mobile-overlay{position:fixed;inset:0;background:rgba(0,20,40,.45);z-index:150;opacity:0;pointer-events:none;transition:.25s}
+    .mobile-overlay.show{opacity:1;pointer-events:auto}
+
+    @media(max-width:1100px){
+      .main-nav{gap:17px}.header-inner{gap:20px}.header-contact{display:none}
+      .hero-inner{gap:25px}.logo-grid{grid-template-columns:repeat(5,1fr)}
+      .footer-grid{grid-template-columns:1.2fr 1fr 1fr}
     }
-    @media(max-width:800px){
-      .topbar{display:none}header{height:65px}.nav{gap:10px}.brand strong{font-size:17px}
-      nav,.header-actions{display:none}.mobile-menu{display:block}
-      .hero-grid{min-height:auto;padding:48px 0}.hero h1{font-size:34px}.hero p{font-size:16px}
-      .stats{grid-template-columns:repeat(2,1fr);margin-top:0;border-radius:0}.stat{border-right:0;border-bottom:1px solid var(--line);padding:12px}
-      section{padding:60px 0}.section-head h2{font-size:28px}
-      .steps{grid-template-columns:1fr 1fr}.logo-grid{grid-template-columns:repeat(3,1fr)}
-      .footer-grid{grid-template-columns:1fr;gap:28px}
+    @media(max-width:860px){
+      .topline{display:none}.header{height:68px}.main-nav{display:none}.hamburger{display:block}
+      .logo-copy span{display:none}.logo-copy b{font-size:18px}
+      .hero-inner{grid-template-columns:1fr;min-height:auto;padding:55px 0}.hero-art{display:none}
+      .hero h1{font-size:38px}.stats{margin-top:0;border-radius:0}
+      .promo-layout{grid-template-columns:1fr}.promo-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+      .steps{grid-template-columns:1fr 1fr}.logo-grid{grid-template-columns:repeat(4,1fr)}
+      .country-grid{grid-template-columns:repeat(3,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr}
     }
-    @media(max-width:480px){
-      .container{width:90%}.stats{grid-template-columns:1fr 1fr}.stat strong{font-size:25px}
+    @media(max-width:560px){
+      .container{width:90%}.hero h1{font-size:32px}.hero-lead{font-size:15px}
+      .hero-actions .btn{width:100%}.stats{grid-template-columns:1fr 1fr;padding:8px}
+      .stat{padding:15px 8px;border-right:0;border-bottom:1px solid var(--line)}
+      .stat strong{font-size:24px}.section-title h2{font-size:27px}
+      section{padding:62px 0}.promo-side{grid-template-columns:1fr}.promo-main-visual{height:225px}
       .steps{grid-template-columns:1fr}.logo-grid{grid-template-columns:repeat(2,1fr)}
-      .hero-buttons .btn{width:100%}.promo-visual{height:210px}
+      .country-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr}
+      .float-actions{right:12px;bottom:14px}
     }
   </style>
-</head>
-<body>
 
-  <div class="topbar">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Tôi có cần đăng ký thêm tài khoản để sử dụng VNPAY-QR không?","acceptedAnswer":{"@type":"Answer","text":"Khách hàng có thể thanh toán thông qua tính năng QR Pay trên ứng dụng Mobile Banking của ngân hàng hoặc Ví điện tử sẵn có mà không cần đăng ký thêm tài khoản mới."}},
+      {"@type":"Question","name":"Tôi chưa có thẻ tín dụng, có thể thanh toán VNPAY-QR bằng thẻ tín dụng không?","acceptedAnswer":{"@type":"Answer","text":"Khách hàng cần có thẻ tín dụng được cấp bởi ngân hàng liên kết trước đó. Nếu chưa có, có thể đăng ký mở thẻ tín dụng tại ngân hàng để sử dụng nguồn tiền này khi được hỗ trợ."}},
+      {"@type":"Question","name":"Tại sao không quét được mã QR?","acceptedAnswer":{"@type":"Answer","text":"Hãy bảo đảm ứng dụng Mobile Banking hoặc Ví điện tử đang dùng hỗ trợ VNPAY-QR; đồng thời kiểm tra camera, ánh sáng và thử quét lại mã."}},
+      {"@type":"Question","name":"Thanh toán không thành công thì xử lý thế nào?","acceptedAnswer":{"@type":"Answer","text":"Kiểm tra số dư, hạn mức và kết nối Internet rồi thử lại. Nếu tài khoản đã bị trừ tiền, liên hệ ngân hàng phát hành để tra soát giao dịch."}},
+      {"@type":"Question","name":"Tôi muốn hoàn tiền thì xử lý thế nào?","acceptedAnswer":{"@type":"Answer","text":"Việc hoàn tiền đối với giao dịch VNPAY-QR do đơn vị bán hàng thực hiện. Khách hàng nên liên hệ trực tiếp đơn vị cung cấp hàng hóa, dịch vụ hoặc ngân hàng phát hành để được hỗ trợ."}}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="topline">
     <div class="container">
-      <a href="#faq">Trợ giúp</a>
+      <a href="#dich-vu">Dịch vụ</a>
+      <a href="#tin-tuc">Tin tức</a>
+      <a href="#ve-chung-toi">Về chúng tôi</a>
       <a href="#lien-he">Liên hệ</a>
-      <span>Hotline: <b>*3388</b></span>
+      <a href="#tuyen-dung">Tuyển dụng</a>
+      <span class="lang">🌐 VI ▾</span>
     </div>
   </div>
 
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#">
-        <div class="brand-mark">VN<br>PAY</div>
-        <div><strong>VNPAY</strong><span>Công ty Cổ phần Giải pháp Thanh toán Việt Nam</span></div>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="VNPAY">
+        <div class="logo-mark">VN<br>PAY</div>
+        <div class="logo-copy"><b>VNPAY</b><span>CÔNG TY CỔ PHẦN GIẢI PHÁP THANH TOÁN VIỆT NAM</span></div>
       </a>
-      <nav>
-        <a href="#gioi-thieu" class="active">VNPAY-QR</a>
+
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <a class="active" href="#vnpay-qr">VNPAY-QR</a>
         <a href="#uu-dai">Ưu đãi</a>
         <a href="#huong-dan">Hướng dẫn</a>
-        <a href="#ngan-hang">Ngân hàng & Ví</a>
+        <a href="#doi-tac">Ngân hàng & Ví</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <div class="header-actions">
-        <span class="hotline">Hỗ trợ <b>*3388</b></span>
-        <a class="btn btn-primary" href="#huong-dan">Khám phá ngay</a>
+
+      <div class="header-contact">
+        <span class="hotline">Hotline: <strong>*3388</strong></span>
+        <a class="btn btn-blue" href="#huong-dan">Khám phá ngay</a>
       </div>
-      <span class="mobile-menu">☰</span>
+
+      <button class="hamburger" id="openMenu" aria-label="Mở menu">☰</button>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="gioi-thieu">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">✦ THANH TOÁN KHÔNG TIỀN MẶT</span>
-          <h1>VNPAY-QR<br>Thanh toán linh hoạt,<br>đa dạng nguồn tiền</h1>
-          <p>VNPAY-QR là giải pháp thanh toán qua mã QR tích hợp sẵn trên các ứng dụng ngân hàng và ví điện tử, cho phép lựa chọn nguồn tiền phù hợp.</p>
-          <div class="hero-buttons">
-            <a class="btn btn-light" href="#huong-dan">Tìm hiểu cách thanh toán</a>
-            <a class="btn btn-outline" href="#ngan-hang">Xem ngân hàng liên kết</a>
+  <div class="mobile-overlay" id="overlay"></div>
+  <aside class="mobile-nav" id="mobileNav" aria-label="Menu di động">
+    <button class="close" id="closeMenu" aria-label="Đóng menu">×</button>
+    <div class="mobile-logo">
+      <div class="logo"><div class="logo-mark">VN<br>PAY</div><div class="logo-copy"><b>VNPAY</b></div></div>
+    </div>
+    <a href="#vnpay-qr">VNPAY-QR</a>
+    <a href="#uu-dai">Ưu đãi</a>
+    <a href="#huong-dan">Hướng dẫn</a>
+    <a href="#doi-tac">Ngân hàng & Ví</a>
+    <a href="#faq">FAQ</a>
+    <a href="#dich-vu">Dịch vụ</a>
+    <a href="#tin-tuc">Tin tức</a>
+    <a href="#ve-chung-toi">Về chúng tôi</a>
+    <a href="#lien-he">Liên hệ</a>
+    <a href="#tuyen-dung">Tuyển dụng</a>
+  </aside>
+
+  <main id="top">
+    <section class="hero" id="vnpay-qr">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="hero-kicker">✦ THANH TOÁN KHÔNG TIỀN MẶT</div>
+          <h1>VNPAY-QR<br><span>Thanh toán linh hoạt,</span><br>đa dạng nguồn tiền</h1>
+          <p class="hero-lead">VNPAY-QR là giải pháp thanh toán qua mã QR tích hợp sẵn trên các ứng dụng ngân hàng và ví điện tử, cho phép lựa chọn thanh toán với đa dạng nguồn tiền.</p>
+          <div class="hero-actions">
+            <a class="btn btn-white" href="#huong-dan">Tìm hiểu cách thanh toán</a>
+            <a class="btn btn-outline" href="#doi-tac">Xem ngân hàng liên kết</a>
+          </div>
+          <div class="hero-note">
+            <span>✓ Nhanh chóng</span><span>✓ Tiện lợi</span><span>✓ Linh hoạt nguồn tiền</span>
           </div>
         </div>
-        <div class="qr-card">
-          <div class="float-bubble bubble1">✓ Thanh toán nhanh chóng</div>
-          <div class="qr-phone">
-            <div class="phone-top"></div>
-            <div class="qr-title">Quét VNPAY-QR</div>
-            <div class="qr-code"></div>
-            <div class="qr-label">Đưa camera vào mã QR để thanh toán</div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="glow"></div>
+          <div class="bubble one"><i></i>Thanh toán thành công</div>
+          <div class="bubble two">40+ Ngân hàng • 15+ Ví điện tử</div>
+          <div class="phone">
+            <div class="phone-head">Quét VNPAY-QR</div>
+            <div class="scan-label">Đưa camera vào mã QR để thanh toán</div>
+            <div class="qr"><span class="qr-mini"></span></div>
+            <div class="pay-info"><b>VNPAY-QR</b><span>Thanh toán nhanh chóng và an toàn</span></div>
           </div>
-          <div class="float-bubble bubble2">40+ Ngân hàng • 15+ Ví điện tử</div>
         </div>
       </div>
     </section>
 
-    <div class="container stats">
+    <div class="container stats" aria-label="Thông số VNPAY-QR">
       <div class="stat"><strong>40+</strong><span>Ngân hàng</span></div>
       <div class="stat"><strong>15+</strong><span>Ví điện tử</span></div>
       <div class="stat"><strong>600.000+</strong><span>Điểm chấp nhận thanh toán</span></div>
       <div class="stat"><strong>60 triệu+</strong><span>Người dùng</span></div>
     </div>
 
-    <section class="promo" id="uu-dai">
+    <section class="promo-section" id="uu-dai">
       <div class="container">
-        <div class="section-head">
-          <span class="tag">Ưu đãi & trải nghiệm</span>
+        <div class="section-title">
+          <span class="eyebrow">ƯU ĐÃI & TRẢI NGHIỆM</span>
           <h2>Tận hưởng ưu đãi độc quyền từ VNPAY và đối tác</h2>
-          <p>Quét VNPAY-QR không chỉ nhanh chóng và tiện lợi mà còn mở ra nhiều chương trình ưu đãi khi thanh toán tại các đối tác.</p>
+          <p>Quét QR không chỉ nhanh chóng, tiện lợi mà còn mở ra nhiều cơ hội ưu đãi khi thanh toán tại mạng lưới đối tác.</p>
         </div>
-        <div class="promo-grid">
-          <article class="promo-main">
-            <div class="promo-visual">
-              <div class="ticket"><b>VNPAY-QR</b><small>Thanh toán tiện lợi • Nhận ưu đãi</small></div>
+
+        <div class="promo-layout">
+          <article class="promo-card">
+            <div class="promo-main-visual">
+              <div class="travel-ticket">
+                <small>ƯU ĐÃI THANH TOÁN</small>
+                <h3>VNPAY-QR</h3>
+                <div class="line"></div>
+                <footer><span>Quét QR</span><span>Nhận ưu đãi</span></footer>
+              </div>
             </div>
-            <div class="promo-copy">
-              <h3>Thanh toán QR – thêm nhiều lựa chọn, thêm nhiều tiện ích</h3>
-              <p>Người dùng có thể lựa chọn tài khoản thanh toán hoặc thẻ tín dụng làm nguồn tiền trên ứng dụng ngân hàng liên kết, giúp chủ động hơn trong chi tiêu hằng ngày.</p>
-              <a class="read-more" href="#huong-dan">Xem thêm →</a>
-            </div>
-          </article>
-          <article class="promo-side">
-            <div class="side-card">
-              <div class="side-icon">QR</div>
-              <h3>Hàng trăm nghìn điểm chấp nhận</h3>
-              <p>VNPAY-QR được sử dụng tại mạng lưới điểm thanh toán rộng khắp, phục vụ các nhu cầu mua sắm, ăn uống, di chuyển và nhiều dịch vụ khác.</p>
-              <a class="read-more" href="#ngan-hang">Khám phá hệ sinh thái →</a>
+            <div class="promo-content">
+              <h3>Thêm lựa chọn, thêm tiện ích khi thanh toán</h3>
+              <p>Người dùng có thể lựa chọn nguồn tiền phù hợp, trong đó một số ngân hàng hỗ trợ dùng thẻ tín dụng ngay trên ứng dụng ngân hàng khi quét VNPAY-QR.</p>
+              <a class="read-more" href="#huong-dan">Xem hướng dẫn →</a>
             </div>
           </article>
+
+          <div class="promo-side">
+            <article class="promo-card mini-promo blue">
+              <div class="mini-badge">QR</div>
+              <h3>Cùng hàng trăm nghìn điểm chấp nhận toàn quốc</h3>
+              <p>Mua sắm, ăn uống, di chuyển, du lịch và nhiều nhu cầu dịch vụ khác với trải nghiệm thanh toán QR tiện lợi.</p>
+            </article>
+            <article class="promo-card mini-promo white">
+              <div class="mini-badge">%</div>
+              <h3>Ưu đãi liên tục từ hệ sinh thái đối tác</h3>
+              <p>VNPAY thường xuyên phối hợp với đối tác triển khai chương trình giảm giá, hoàn tiền và ưu đãi theo từng chiến dịch.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="huong-dan">
       <div class="container">
-        <div class="section-head">
-          <span class="tag">4 bước đơn giản</span>
-          <h2>Thanh toán VNPAY-QR dễ dàng</h2>
-          <p>Thực hiện thanh toán bằng tính năng quét mã QR trên ứng dụng ngân hàng hoặc ví điện tử có hỗ trợ VNPAY-QR.</p>
+        <div class="section-title">
+          <span class="eyebrow">4 BƯỚC ĐƠN GIẢN</span>
+          <h2>Thanh toán VNPAY-QR nhanh chóng</h2>
+          <p>Chỉ cần mở tính năng quét QR trên ứng dụng ngân hàng hoặc ví điện tử có hỗ trợ VNPAY-QR.</p>
         </div>
         <div class="steps">
-          <article class="step"><div class="step-number">1</div><h3>Mở tính năng Quét QR</h3><p>Dùng tính năng Quét mã QR trên ứng dụng ngân hàng hoặc ví điện tử.</p></article>
-          <article class="step"><div class="step-number">2</div><h3>Chọn nguồn tiền</h3><p>Chọn tài khoản thanh toán hoặc thẻ tín dụng nếu được ngân hàng hỗ trợ.</p></article>
-          <article class="step"><div class="step-number">3</div><h3>Nhập thông tin</h3><p>Nhập số tiền cần thanh toán và ghi chú nếu có.</p></article>
-          <article class="step"><div class="step-number">4</div><h3>Xác thực</h3><p>Xác thực giao dịch và hoàn tất thanh toán.</p></article>
+          <article class="step"><div class="step-no">1</div><h3>Dùng tính năng Quét mã QR</h3><p>Mở ứng dụng ngân hàng hoặc ví điện tử và chọn tính năng quét mã QR.</p></article>
+          <article class="step"><div class="step-no">2</div><h3>Chọn nguồn tiền</h3><p>Chọn tài khoản thanh toán hoặc thẻ tín dụng nếu ngân hàng hỗ trợ.</p></article>
+          <article class="step"><div class="step-no">3</div><h3>Nhập số tiền</h3><p>Nhập số tiền cần thanh toán và ghi chú nếu có.</p></article>
+          <article class="step"><div class="step-no">4</div><h3>Xác thực</h3><p>Xác thực giao dịch và hoàn tất thanh toán.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="logos-section" id="ngan-hang">
+    <section class="partners" id="doi-tac">
       <div class="container">
-        <div class="section-head">
-          <span class="tag">Hệ sinh thái thanh toán</span>
-          <h2>Từ tài khoản, ví điện tử đến thẻ tín dụng</h2>
-          <p>VNPAY-QR được tích hợp trên nhiều ngân hàng và ví điện tử, giúp người dùng có thêm lựa chọn nguồn tiền.</p>
+        <div class="section-title">
+          <span class="eyebrow">HỆ SINH THÁI THANH TOÁN</span>
+          <h2>Đa dạng nguồn tiền, đa dạng lựa chọn</h2>
+          <p>Trang tham chiếu hiện công bố hệ sinh thái gồm hơn 40 ngân hàng, 15 ví điện tử và các nguồn tiền thẻ tín dụng được ngân hàng liên kết hỗ trợ.</p>
         </div>
-        <div class="logo-tabs">
-          <span class="tab active">Ngân hàng liên kết</span>
-          <span class="tab">Ví điện tử</span>
-          <span class="tab">Thẻ tín dụng</span>
+
+        <div class="source-tabs" role="tablist">
+          <button class="source-tab active" data-tab="banks" role="tab">Tài khoản & Ví điện tử</button>
+          <button class="source-tab" data-tab="cards" role="tab">Nguồn tiền thẻ tín dụng</button>
+          <button class="source-tab" data-tab="international" role="tab">Thanh toán quốc tế</button>
         </div>
-        <div class="logo-grid">
-          <div class="logo-item"><span>VCB<small>Vietcombank</small></span></div>
-          <div class="logo-item"><span>VIETINBANK<small>Ngân hàng TMCP</small></span></div>
-          <div class="logo-item"><span>BIDV<small>Ngân hàng TMCP</small></span></div>
-          <div class="logo-item"><span>AGRIBANK<small>Ngân hàng</small></span></div>
-          <div class="logo-item"><span>MB<small>MB Bank</small></span></div>
-          <div class="logo-item"><span>TECHCOMBANK<small>Ngân hàng</small></span></div>
-          <div class="logo-item"><span>VIB<small>Ngân hàng</small></span></div>
-          <div class="logo-item"><span>VPBANK<small>Ngân hàng</small></span></div>
-          <div class="logo-item"><span>TPBANK<small>Ngân hàng</small></span></div>
-          <div class="logo-item"><span>ACB<small>Ngân hàng</small></span></div>
-          <div class="logo-item"><span>SHB<small>Ngân hàng</small></span></div>
-          <div class="logo-item"><span>HDBANK<small>Ngân hàng</small></span></div>
-          <div class="logo-item"><span>ZaloPay<small>Ví điện tử</small></span></div>
-          <div class="logo-item"><span>Viettel Money<small>Ví điện tử</small></span></div>
-          <div class="logo-item"><span>MoMo<small>Ví điện tử</small></span></div>
-          <div class="logo-item"><span>VNPT Money<small>Ví điện tử</small></span></div>
-          <div class="logo-item"><span>9Pay<small>Ví điện tử</small></span></div>
-          <div class="logo-item"><span>ShopeePay<small>Ví điện tử</small></span></div>
+
+        <div class="source-panel active" id="banks">
+          <p class="partner-title">Ngân hàng liên kết thanh toán</p>
+          <div class="logo-grid">
+            <div class="bank-logo"><div><b>Vietcombank</b><small>VCB</small></div></div>
+            <div class="bank-logo"><div><b>VietinBank</b><small>VIETIN</small></div></div>
+            <div class="bank-logo"><div><b>BIDV</b><small>SMARTBANKING</small></div></div>
+            <div class="bank-logo"><div><b>Agribank</b><small>E-MOBILE</small></div></div>
+            <div class="bank-logo"><div><b>MB</b><small>MBBANK</small></div></div>
+            <div class="bank-logo"><div><b>Techcombank</b><small>TCB</small></div></div>
+            <div class="bank-logo"><div><b>VIB</b><small>MYVIB</small></div></div>
+            <div class="bank-logo"><div><b>VPBank</b><small>VPBANK</small></div></div>
+            <div class="bank-logo"><div><b>TPBank</b><small>TPBANK</small></div></div>
+            <div class="bank-logo"><div><b>SHB</b><small>SHB</small></div></div>
+            <div class="bank-logo"><div><b>MSB</b><small>MSB</small></div></div>
+            <div class="bank-logo"><div><b>ACB</b><small>ACB</small></div></div>
+            <div class="bank-logo"><div><b>Sacombank</b><small>SACOMBANK</small></div></div>
+            <div class="bank-logo"><div><b>NCB</b><small>NCB</small></div></div>
+            <div class="bank-logo"><div><b>SeABank</b><small>SEABANK</small></div></div>
+            <div class="bank-logo"><div><b>HDBank</b><small>HDBANK</small></div></div>
+            <div class="bank-logo"><div><b>PVcomBank</b><small>PVCB</small></div></div>
+            <div class="bank-logo"><div><b>Nam A Bank</b><small>NAM A</small></div></div>
+            <div class="bank-logo"><div><b>Woori Bank</b><small>WOORI</small></div></div>
+            <div class="bank-logo"><div><b>Vikki Bank</b><small>VIKKI</small></div></div>
+            <div class="bank-logo"><div><b>OCB</b><small>OCB</small></div></div>
+          </div>
+
+          <div class="group-gap">
+            <p class="partner-title">Ví điện tử liên kết thanh toán</p>
+            <div class="logo-grid">
+              <div class="bank-logo"><div><b>Viettel Money</b></div></div>
+              <div class="bank-logo"><div><b>ZaloPay</b></div></div>
+              <div class="bank-logo"><div><b>PayME</b></div></div>
+              <div class="bank-logo"><div><b>TING</b></div></div>
+              <div class="bank-logo"><div><b>MoMo</b></div></div>
+              <div class="bank-logo"><div><b>CAKE</b></div></div>
+              <div class="bank-logo"><div><b>9Pay</b></div></div>
+              <div class="bank-logo"><div><b>GPay</b></div></div>
+              <div class="bank-logo"><div><b>TrueMoney</b></div></div>
+              <div class="bank-logo"><div><b>Galaxy Pay</b></div></div>
+              <div class="bank-logo"><div><b>VTC Pay</b></div></div>
+              <div class="bank-logo"><div><b>OneU</b></div></div>
+              <div class="bank-logo"><div><b>BaoKim</b></div></div>
+              <div class="bank-logo"><div><b>Vimass</b></div></div>
+              <div class="bank-logo"><div><b>VNPT Money</b></div></div>
+              <div class="bank-logo"><div><b>ShopeePay</b></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="source-panel" id="cards">
+          <p class="partner-title">Ngân hàng hỗ trợ nguồn tiền thẻ tín dụng</p>
+          <div class="logo-grid">
+            <div class="bank-logo"><div><b>Vietcombank</b><small>VCB</small></div></div>
+            <div class="bank-logo"><div><b>VietinBank</b><small>VIETIN</small></div></div>
+            <div class="bank-logo"><div><b>BIDV</b><small>BIDV</small></div></div>
+            <div class="bank-logo"><div><b>Agribank</b><small>AGRIBANK</small></div></div>
+            <div class="bank-logo"><div><b>VNPAY</b><small>VNPAY APP</small></div></div>
+            <div class="bank-logo"><div><b>MB</b><small>MB</small></div></div>
+            <div class="bank-logo"><div><b>VPBank</b><small>VPBANK</small></div></div>
+            <div class="bank-logo"><div><b>VIB</b><small>MYVIB</small></div></div>
+            <div class="bank-logo"><div><b>TPBank</b><small>TPBANK</small></div></div>
+            <div class="bank-logo"><div><b>NCB</b><small>NCB</small></div></div>
+            <div class="bank-logo"><div><b>SeABank</b><small>SEABANK</small></div></div>
+            <div class="bank-logo"><div><b>HDBank</b><small>HDBANK</small></div></div>
+            <div class="bank-logo"><div><b>BVBank</b><small>BVBank</small></div></div>
+            <div class="bank-logo"><div><b>PVcomBank</b><small>PVCB</small></div></div>
+            <div class="bank-logo"><div><b>SHB</b><small>SHB</small></div></div>
+            <div class="bank-logo"><div><b>Liobank</b><small>LIO</small></div></div>
+          </div>
+        </div>
+
+        <div class="source-panel" id="international">
+          <div class="country-grid">
+            <div class="country"><div class="flag">🇨🇳</div><b>Trung Quốc</b></div>
+            <div class="country"><div class="flag">🇰🇷</div><b>Hàn Quốc</b></div>
+            <div class="country"><div class="flag">🇹🇼</div><b>Đài Loan</b></div>
+            <div class="country"><div class="flag">🇹🇭</div><b>Thái Lan</b></div>
+            <div class="country"><div class="flag">🇱🇦</div><b>Lào</b></div>
+            <div class="country"><div class="flag">🇰🇭</div><b>Campuchia</b></div>
+            <div class="country"><div class="flag">🇸🇬</div><b>Singapore</b></div>
+          </div>
+          <div style="margin-top:28px;padding:20px;border-radius:15px;background:#fff;border:1px solid var(--line);color:var(--muted);font-size:13px;line-height:1.7">
+            Hệ thống tham chiếu hiện liệt kê các phương thức/đối tác thanh toán quốc tế theo từng thị trường. Phần này được tách riêng để người dùng dễ tìm hiểu theo quốc gia.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="international" id="dich-vu">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">DỊCH VỤ</span>
+          <h2>Hệ sinh thái giải pháp thanh toán của VNPAY</h2>
+          <p>Cấu trúc dịch vụ được trình bày theo hướng dễ khám phá, giúp người dùng nhanh chóng tìm đúng giải pháp phù hợp.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><div class="step-no">QR</div><h3>VNPAY-QR</h3><p>Thanh toán bằng mã QR qua ngân hàng, ví điện tử và nguồn tiền được hỗ trợ.</p></article>
+          <article class="step"><div class="step-no">POS</div><h3>VNPAY-POS</h3><p>Giải pháp chấp nhận thanh toán tại điểm bán với nhiều phương thức.</p></article>
+          <article class="step"><div class="step-no">P</div><h3>VNPAY PhonePOS</h3><p>Biến điện thoại thành thiết bị hỗ trợ thanh toán thuận tiện.</p></article>
+          <article class="step"><div class="step-no">INV</div><h3>VNPAY-Invoice</h3><p>Giải pháp hóa đơn điện tử hỗ trợ doanh nghiệp số hóa quy trình.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo-section" id="tin-tuc">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">TIN TỨC & ƯU ĐÃI</span>
+          <h2>Cập nhật chương trình nổi bật</h2>
+          <p>Các thẻ nội dung dưới đây được xây dựng theo nhóm thông tin mà trang VNPAY-QR đang ưu tiên: ưu đãi, du lịch, di chuyển và thanh toán bằng nguồn tiền linh hoạt.</p>
+        </div>
+        <div class="promo-layout">
+          <article class="promo-card mini-promo white">
+            <div class="mini-badge">01</div>
+            <h3>Ưu đãi thanh toán vé xe</h3>
+            <p>VNPAY phối hợp với Nhà xe Hải Âu triển khai ưu đãi khi thanh toán vé xe bằng VNPAY-QR.</p>
+          </article>
+          <article class="promo-card mini-promo white">
+            <div class="mini-badge">02</div>
+            <h3>Ưu đãi cho hành trình bay</h3>
+            <p>Các chương trình hợp tác với đối tác hàng không giúp khách hàng tối ưu chi phí khi thanh toán.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="faq">
       <div class="container">
-        <div class="section-head">
-          <span class="tag">Giải đáp thắc mắc</span>
+        <div class="section-title">
+          <span class="eyebrow">FAQ</span>
           <h2>Câu hỏi thường gặp về VNPAY-QR</h2>
-          <p>Thông tin cơ bản giúp bạn sử dụng VNPAY-QR thuận tiện và an toàn hơn.</p>
+          <p>Thông tin giải đáp được biên soạn theo nội dung FAQ hiện có trên trang tham chiếu.</p>
         </div>
         <div class="faq">
           <details open>
             <summary>Tôi có cần đăng ký thêm tài khoản để sử dụng không?</summary>
-            <p>Quý khách có thể thanh toán thông qua tính năng QR Pay trên ứng dụng Mobile Banking của ngân hàng và ví điện tử sẵn có mà không cần đăng ký thêm tài khoản mới.</p>
+            <p>Quý khách có thể thanh toán thông qua tính năng QR Pay trên ứng dụng Mobile Banking của các Ngân hàng và Ví điện tử sẵn có của mình mà không cần đăng ký thêm tài khoản mới.</p>
           </details>
           <details>
-            <summary>Tôi chưa có thẻ tín dụng, có thể thanh toán bằng nguồn tiền thẻ tín dụng không?</summary>
-            <p>Quý khách cần có thẻ tín dụng được cấp bởi ngân hàng liên kết. Nếu chưa có, có thể đăng ký mở thẻ tín dụng tại ngân hàng để sử dụng nguồn tiền này khi được hỗ trợ.</p>
+            <summary>Tôi chưa có thẻ tín dụng, có thanh toán VNPAY-QR sử dụng nguồn tiền thẻ tín dụng không?</summary>
+            <p>Quý khách cần có sẵn thẻ tín dụng được cấp bởi ngân hàng liên kết trước đó. Nếu chưa có, Quý khách có thể đăng ký mở thẻ tín dụng tại ngân hàng để thanh toán bằng nguồn tiền này.</p>
           </details>
           <details>
             <summary>Tại sao không quét được mã QR?</summary>
-            <p>Hãy đảm bảo ứng dụng Mobile Banking hoặc ví điện tử đang sử dụng có hỗ trợ VNPAY-QR. Đồng thời kiểm tra camera, ánh sáng và thử quét lại. Nếu vẫn không thành công, hãy đề nghị đơn vị bán hàng cung cấp mã VNPAY-QR hợp lệ.</p>
+            <p>Quý khách vui lòng đảm bảo đang sử dụng ứng dụng Mobile Banking của các Ngân hàng hoặc Ví điện tử có hỗ trợ thanh toán VNPAY-QR. Đồng thời, kiểm tra lại camera thiết bị, ánh sáng môi trường và thử quét lại mã.</p>
           </details>
           <details>
             <summary>Thanh toán không thành công thì xử lý thế nào?</summary>
-            <p>Kiểm tra số dư, hạn mức giao dịch và kết nối Internet rồi thử lại. Nếu tài khoản đã bị trừ tiền, hãy liên hệ ngân hàng phát hành để tra soát giao dịch. Thời gian hoàn tiền có thể phụ thuộc vào ngân hàng phát hành và loại thẻ/tài khoản.</p>
+            <p>Nếu giao dịch không thành công, hãy kiểm tra số dư tài khoản, hạn mức giao dịch và kết nối Internet rồi thử lại. Nếu đã bị trừ tiền, vui lòng liên hệ ngân hàng phát hành để tra soát giao dịch. Thời gian xử lý có thể phụ thuộc vào ngân hàng phát hành.</p>
           </details>
           <details>
             <summary>Tôi muốn hoàn tiền thì xử lý thế nào?</summary>
-            <p>Đối với giao dịch VNPAY-QR, việc hoàn tiền do đơn vị bán hàng thực hiện. Quý khách vui lòng liên hệ đơn vị cung cấp hàng hóa, dịch vụ hoặc ngân hàng phát hành để được hỗ trợ theo chính sách áp dụng.</p>
+            <p>Đối với các giao dịch thanh toán qua VNPAY-QR, việc hoàn tiền sẽ do đơn vị bán hàng thực hiện. Quý khách vui lòng liên hệ trực tiếp với đơn vị cung cấp hàng hóa, dịch vụ hoặc ngân hàng phát hành để được hỗ trợ.</p>
           </details>
         </div>
       </div>
@@ -335,9 +553,9 @@
 
     <section class="cta">
       <div class="container">
-        <h2>Thanh toán nhanh hơn với VNPAY-QR</h2>
-        <p>Khám phá phương thức thanh toán linh hoạt, tiện lợi với hàng chục ngân hàng, ví điện tử và mạng lưới điểm chấp nhận rộng khắp.</p>
-        <a class="btn btn-light" href="#huong-dan">Xem hướng dẫn thanh toán</a>
+        <h2>Trải nghiệm thanh toán VNPAY-QR</h2>
+        <p>Quét một mã QR, lựa chọn nguồn tiền phù hợp và hoàn tất thanh toán theo cách đơn giản, linh hoạt.</p>
+        <a class="btn btn-white" href="#huong-dan">Xem hướng dẫn ngay</a>
       </div>
     </section>
   </main>
@@ -345,27 +563,32 @@
   <footer id="lien-he">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand"><div class="brand-mark">VN<br>PAY</div><div><strong>VNPAY</strong><span style="color:#9ab1c7">Giải pháp thanh toán Việt Nam</span></div></div>
-          <p>Công ty Cổ phần Giải pháp Thanh toán Việt Nam (VNPAY), cung cấp các giải pháp thanh toán số cho người dùng và doanh nghiệp.</p>
+        <div id="ve-chung-toi">
+          <div class="footer-logo"><div class="logo-mark">VN<br>PAY</div><strong>VNPAY</strong></div>
+          <p class="footer-text">Công ty Cổ phần Giải pháp Thanh toán Việt Nam (VNPAY) cung cấp các giải pháp thanh toán số cho người dùng và doanh nghiệp.</p>
         </div>
         <div>
-          <h3>Thông tin liên hệ</h3>
+          <h3>Công ty</h3>
           <ul>
-            <li>Trụ sở: Tầng 8, số 22, phố Láng Hạ, phường Láng, Thành phố Hà Nội</li>
-            <li>VP TP.HCM: Tầng 10, Tòa nhà Minh Long, số 17 Bà Huyện Thanh Quan</li>
-            <li>Email: hotrovnpay@vnpay.vn</li>
-            <li>Hotline: *3388</li>
+            <li><a href="#ve-chung-toi">Về chúng tôi</a></li>
+            <li><a href="#tin-tuc">Tin tức</a></li>
+            <li><a href="#tuyen-dung">Tuyển dụng</a></li>
           </ul>
         </div>
         <div>
+          <h3>Liên hệ</h3>
+          <ul>
+            <li>Hà Nội: Tầng 8, số 22, phố Láng Hạ</li>
+            <li>TP.HCM: Tầng 10, Tòa nhà Minh Long, 17 Bà Huyện Thanh Quan</li>
+            <li>Đà Nẵng: Tầng 10, 224 Nguyễn Hữu Thọ</li>
+            <li>Hotline: *3388</li>
+            <li>Email: hotrovnpay@vnpay.vn</li>
+          </ul>
+        </div>
+        <div id="tuyen-dung">
           <h3>Dịch vụ</h3>
           <ul>
-            <li>VNPAY-QR</li>
-            <li>VNPAY-POS</li>
-            <li>VNPAY PhonePOS</li>
-            <li>VNPAY-Invoice</li>
-            <li>Giải pháp thanh toán doanh nghiệp</li>
+            <li>VNPAY-QR</li><li>VNPAY-POS</li><li>VNPAY PhonePOS</li><li>VNPAY-Invoice</li><li>VNeDOC</li><li>VNPAY-CA</li>
           </ul>
         </div>
       </div>
@@ -373,5 +596,44 @@
     </div>
   </footer>
 
+  <div class="float-actions" aria-label="Liên hệ nhanh">
+    <a class="float-btn zalo" href="https://zalo.me/" target="_blank" rel="noopener" aria-label="Zalo">Z</a>
+    <a class="float-btn call" href="tel:*3388" aria-label="Gọi hotline">☎</a>
+  </div>
+
+  <script>
+    // Tab chuyển đổi nguồn tiền
+    document.querySelectorAll('.source-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.source-tab').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.source-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const panel = document.getElementById(btn.dataset.tab);
+        if(panel) panel.classList.add('active');
+      });
+    });
+
+    // Menu mobile
+    const nav = document.getElementById('mobileNav');
+    const overlay = document.getElementById('overlay');
+    const open = () => { nav.classList.add('open'); overlay.classList.add('show'); document.body.classList.add('no-scroll'); };
+    const close = () => { nav.classList.remove('open'); overlay.classList.remove('show'); document.body.classList.remove('no-scroll'); };
+    document.getElementById('openMenu').addEventListener('click', open);
+    document.getElementById('closeMenu').addEventListener('click', close);
+    overlay.addEventListener('click', close);
+    document.querySelectorAll('.mobile-nav a').forEach(a => a.addEventListener('click', close));
+
+    // Active section trong header
+    const navLinks = [...document.querySelectorAll('.main-nav a')];
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, {rootMargin:'-35% 0px -55% 0px', threshold:0});
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
