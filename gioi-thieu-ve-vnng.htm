@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Về Chúng Tôi - VNNG Solutions</title>
+    <title>Về Chúng Tôi - VNNG Solutions | Chạm Kết Nối Mọi Giá Trị</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/logo.png">
-
-    <meta name="description" content="Giới thiệu về Công ty Cổ phần Giải pháp Kinh doanh Thế hệ mới VNNG - Tầm nhìn, Sứ mệnh, Giá trị cốt lõi, Dấu ấn hành trình và Lộ trình phát triển.">
+    <meta name="description" content="Công ty Cổ phần Giải pháp Kinh doanh Thế hệ mới VNNG - Hạ tầng kết nối trung gian giữa đối tác công nghệ và thị trường đa ngành.">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,9 +16,10 @@
             theme: {
                 extend: {
                     colors: {
-                        vnpayBlue: '#0055A5',
-                        vnpayRed: '#ED1C24',
-                        vnpayDark: '#0A2540',
+                        brandDark: '#07111e',
+                        brandPrimary: '#0055A5',
+                        brandAccent: '#10B981',
+                        brandCard: '#0f1f38'
                     }
                 }
             }
@@ -27,90 +27,139 @@
     </script>
     <!-- FontAwesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-vnpayBlue selection:text-white">
+<body class="bg-brandDark text-slate-100 antialiased selection:bg-brandPrimary selection:text-white">
 
     <!-- Header / Navbar -->
-    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-slate-100 py-3">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center gap-4">
+    <header class="bg-brandDark/90 backdrop-blur-xl sticky top-0 z-50 border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <img alt="Logo VNNG Solutions" src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/logo.png" class="h-10 sm:h-12 w-auto object-contain flex-shrink-0">
+                <img alt="Logo VNNG" src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/logo.png" class="h-10 sm:h-12 w-auto object-contain">
                 <div class="flex flex-col">
+                    <span class="font-extrabold text-base sm:text-lg tracking-wider text-white">VNNG SOLUTIONS</span>
+                    <span class="text-[11px] text-emerald-400 font-semibold tracking-wide uppercase">Chạm kết nối mọi giá trị</span>
                     <span class="font-black text-sm sm:text-base text-slate-900 tracking-tight leading-tight">VNNG SOLUTIONS</span>
                     <span class="text-[10px] sm:text-xs text-slate-500 font-medium">Giải pháp triển khai toàn diện</span>
                 </div>
             </div>
 
-            <nav class="hidden md:flex items-center gap-7">
-                <a href="https://vnngsolutions.github.io/" class="text-sm font-semibold text-slate-700 hover:text-vnpayBlue transition">Trang chủ</a>
-                <a href="#gioi-thieu" class="text-sm font-semibold text-vnpayBlue transition">Giới thiệu</a>
-                <a href="#gia-tri-cot-loi" class="text-sm font-semibold text-slate-700 hover:text-vnpayBlue transition">Văn hóa</a>
-                <a href="#dau-an" class="text-sm font-semibold text-slate-700 hover:text-vnpayBlue transition">Hành trình</a>
-                <a href="#lo-trinh" class="text-sm font-semibold text-slate-700 hover:text-vnpayBlue transition">Lộ trình</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#gioi-thieu" class="text-sm font-medium text-slate-300 hover:text-white transition">Giới thiệu</a>
+                <a href="#gia-tri-cot-loi" class="text-sm font-medium text-slate-300 hover:text-white transition">Văn hóa & Giá trị</a>
+                <a href="#dau-an" class="text-sm font-medium text-slate-300 hover:text-white transition">Hành trình</a>
+                <a href="#lo-trinh" class="text-sm font-medium text-slate-300 hover:text-white transition">Lộ trình tương lai</a>
             </nav>
 
             <div>
-                <a href="https://vnngsolutions.github.io/#dang-ky" class="bg-vnpayBlue hover:bg-blue-700 text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-md transition">
-                    Liên Hệ Hợp Tác
+                <a href="https://vnngsolutions.github.io/#dang-ky" class="bg-gradient-to-r from-blue-600 to-brandPrimary hover:from-blue-500 hover:to-blue-600 text-white px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-lg shadow-blue-500/20 transition-all transform hover:-translate-y-0.5">
+                    Hợp Tác Chiến Lược
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Banner -->
-    <section class="relative bg-gradient-to-b from-blue-900 via-vnpayBlue to-blue-800 text-white py-16 sm:py-24">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
-            <span class="inline-block bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-blue-200 text-xs font-semibold uppercase tracking-widest border border-white/20">
-                Về Chúng Tôi
-            </span>
-            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
-                Chạm Kết Nối Mọi Giá Trị
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-20 lg:py-32 bg-gradient-to-b from-brandDark via-[#0b172a] to-brandDark">
+        <div class="absolute inset-0 bg-grid-pattern opacity-60"></div>
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
+            <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/30 px-4 py-1.5 rounded-full text-blue-400 text-xs font-semibold tracking-wider uppercase">
+                <i class="fa-solid fa-gem text-[10px]"></i>
+                <span>Về Chúng Tôi — VNNG Solutions</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white max-w-4xl mx-auto leading-tight">
+                Kiến Tạo Hạ Tầng <span class="bg-gradient-to-r from-blue-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">Kết Nối Đa Ngành</span>
             </h1>
-            <p class="text-blue-100 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
-                Hạ tầng kết nối trung gian giữa đối tác công nghệ và thị trường đa ngành, giúp giải pháp vươn xa và bền vững.
+            <p class="text-slate-400 text-base sm:text-xl max-w-2xl mx-auto leading-relaxed">
+                Kết nối các giải pháp công nghệ tiên tiến đến thị trường thực tiễn, đồng hành cùng doanh nghiệp mở rộng quy mô và tăng trưởng bền vững.
             </p>
+            <div class="flex flex-wrap justify-center gap-4 pt-4">
+                <a href="#gioi-thieu" class="bg-white text-brandDark hover:bg-slate-200 px-6 py-3 rounded-xl font-bold text-sm transition shadow-md">
+                    Khám phá ngay <i class="fa-solid fa-arrow-down ml-2"></i>
+                </a>
+                <a href="#lo-trinh" class="bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700 px-6 py-3 rounded-xl font-bold text-sm transition">
+                    Lộ trình phát triển
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- SECTION 1: GIỚI THIỆU CÔNG TY (Dựa trên ảnh VNNG1.jpg) -->
-    <section id="gioi-thieu" class="py-16 sm:py-24 bg-white scroll-mt-20">
+    <!-- SECTION 1: GIỚI THIỆU CÔNG TY -->
+    <section id="gioi-thieu" class="py-24 bg-[#0a1424] border-t border-slate-800/60 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
-                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Tổng quan</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900">Giới thiệu Công ty</h2>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+                <div>
+                    <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Tổng quan doanh nghiệp</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Giới thiệu Công ty VNNG</h2>
+                </div>
+                <p class="text-slate-400 text-sm max-w-md">
+                    Được thành lập ngày 18/05/2020, VNNG định hình là cầu nối vững chắc giữa hệ sinh thái công nghệ và mạng lưới thương mại toàn quốc.
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <!-- Sơ đồ kết nối (Mô phỏng hình khối thông minh từ ảnh 1) -->
-                <div class="lg:col-span-6 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm relative">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
-                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-1">
-                            <div class="text-xs font-bold text-vnpayBlue uppercase">ĐỐI TÁC CÔNG NGHỆ</div>
-                            <p class="text-xs text-slate-500">Fintech · SaaS · IoT · Chuyển đổi số</p>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <!-- Infographic Network Hub -->
+                <div class="lg:col-span-5 bg-brandCard/80 border border-slate-800/80 p-8 rounded-3xl flex flex-col justify-center relative overflow-hidden shadow-2xl">
+                    <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-blue-600/10 rounded-full blur-2xl"></div>
+                    
+                    <div class="space-y-6 relative z-10">
+                        <div class="bg-slate-900/90 border border-slate-700/60 p-4 rounded-2xl">
+                            <span class="text-[11px] font-bold text-blue-400 uppercase tracking-wider">Đối tác công nghệ</span>
+                            <p class="text-xs text-slate-300 mt-1">Fintech · SaaS · IoT · Chuyển đổi số</p>
                         </div>
-                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-1">
-                            <div class="text-xs font-bold text-green-600 uppercase">THANH TOÁN &amp; CHUYỂN ĐỔI SỐ</div>
-                            <p class="text-xs text-slate-500">Ngân hàng · VNPAY · ZaloPay</p>
+                        
+                        <div class="flex justify-center my-2">
+                            <div class="w-20 h-20 bg-gradient-to-tr from-blue-600 to-emerald-500 rounded-2xl rotate-45 flex items-center justify-center shadow-xl shadow-blue-500/20">
+                                <span class="text-white font-black text-lg -rotate-45">VNNG</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-slate-900/90 border border-slate-700/60 p-4 rounded-2xl">
+                                <span class="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">Thị trường</span>
+                                <p class="text-xs text-slate-300 mt-1">Sản xuất, Logistics, Bán lẻ</p>
+                            </div>
+                            <div class="bg-slate-900/90 border border-slate-700/60 p-4 rounded-2xl">
+                                <span class="text-[11px] font-bold text-blue-400 uppercase tracking-wider">Thanh toán số</span>
+                                <p class="text-xs text-slate-300 mt-1">Ngân hàng, VNPAY, ZaloPay</p>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="my-6 flex justify-center">
-                        <div class="w-24 h-24 bg-gradient-to-br from-vnpayBlue to-blue-700 text-white rounded-full flex flex-col items-center justify-center shadow-xl border-4 border-white">
-                            <span class="font-black text-base">VNNG</span>
-                            <span class="text-[10px] text-blue-100 font-medium">Kết nối</span>
-                        </div>
+                <!-- Text Content -->
+                <div class="lg:col-span-7 bg-brandCard/80 border border-slate-800/80 p-8 sm:p-10 rounded-3xl flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <h3 class="text-xl sm:text-2xl font-bold text-white">
+                            Công ty Cổ phần Giải pháp Kinh doanh Thế hệ mới <span class="text-blue-400">(VNNG Solution., JSC)</span>
+                        </h3>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Với sứ mệnh kết nối các giải pháp công nghệ có giá trị thực tiễn đến thị trường, VNNG đồng hành cùng đối tác trong hành trình mở rộng kinh doanh, gia tăng hiệu quả vận hành và xây dựng hệ sinh thái phát triển bền vững.
+                        </p>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Chúng tôi cung cấp giải pháp triển khai toàn diện từ phát triển mạng lưới khách hàng, triển khai sản phẩm, đào tạo, vận hành đến chăm sóc sau bán, giúp đối tác rút ngắn thời gian thâm nhập thị trường.
+                        </p>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
-                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-1">
-                            <div class="text-xs font-bold text-green-600 uppercase">THỊ TRƯỜNG ĐA NGÀNH</div>
-                            <p class="text-xs text-slate-500">Sản xuất · Logistics · Bán lẻ</p>
+                    <div class="bg-blue-950/40 border border-blue-500/20 rounded-2xl p-5 flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0 text-lg">
+                            <i class="fa-solid fa-chart-pie"></i>
                         </div>
+                        <div class="space-y-1">
+                            <h4 class="text-sm font-bold text-white">Năng lực thực chiến quy mô lớn</h4>
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                Sở hữu mạng lưới tại <strong class="text-white">04 vùng - 09 khu vực</strong> cùng <strong class="text-white">hơn 300 nhân sự</strong> chất lượng cao, triển khai <strong class="text-white">hơn 750,000 điểm chấp nhận dịch vụ</strong> cho VNPAY từ năm 2020 đến nay.
+                            </p>
                         <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-1">
                             <div class="text-xs font-bold text-slate-700 uppercase">DOANH NGHIỆP · HỘ KD</div>
                             <p class="text-xs text-slate-500">Điểm bán · Người dùng</p>
@@ -134,212 +183,210 @@
                             <i class="fa-solid fa-map-location-dot"></i>
                             <span>Năng lực thực chiến toàn quốc:</span>
                         </div>
-                        <p class="leading-relaxed">
-                            Với mạng lưới tại <strong class="text-slate-900">04 vùng - 09 khu vực</strong> trên toàn quốc và <strong class="text-slate-900">hơn 300 nhân sự</strong> thực chiến giàu kinh nghiệm, VNNG đã triển khai các giải pháp thanh toán và chuyển đổi số <strong class="text-slate-900">hơn 750,000 điểm chấp nhận dịch vụ</strong> cho đối tác chiến lược VNPAY từ năm 2020 đến nay, đồng thời mở rộng năng lực triển khai trong các lĩnh vực như: Tài chính, bảo hiểm, viễn thông, thương mại dịch vụ, bán lẻ, logistics,...
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2: VĂN HÓA & GIÁ TRỊ CỐT LÕI (Dựa trên ảnh VNNG2.png) -->
-    <section id="gia-tri-cot-loi" class="py-16 sm:py-24 bg-slate-50 border-t border-slate-200/60 scroll-mt-20">
+    <!-- SECTION 2: VĂN HÓA & GIÁ TRỊ CỐT LÕI -->
+    <section id="gia-tri-cot-loi" class="py-24 bg-brandDark border-t border-slate-800/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
-                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-100 px-3 py-1 rounded-full">Văn hóa</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900">Giá trị cốt lõi</h2>
-                <p class="text-slate-600 text-sm sm:text-base">Năm giá trị nền tảng định hình cách VNNG làm việc, hợp tác và tạo ra giá trị bền vững.</p>
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-bold text-blue-400 uppercase tracking-widest bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">Văn hóa doanh nghiệp</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Giá Trị Cốt Lõi</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Năm trụ cột nền tảng định hình văn hóa làm việc, hợp tác và phát triển của VNNG.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- 1. Uy tín -->
-                <div class="bg-white p-7 rounded-3xl shadow-sm hover:shadow-xl transition border border-slate-200/80 space-y-4 group">
-                    <div class="w-12 h-12 bg-blue-50 text-vnpayBlue rounded-2xl flex items-center justify-center text-xl group-hover:bg-vnpayBlue group-hover:text-white transition shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Uy Tín -->
+                <div class="bg-brandCard border border-slate-800 p-8 rounded-3xl hover:border-blue-500/50 transition-all duration-300 group shadow-lg">
+                    <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition shadow-inner">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">UY TÍN</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Minh bạch, trách nhiệm, nhất quán trong mọi cam kết. Niềm tin xây bằng giá trị thật.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">UY TÍN</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Minh bạch, trách nhiệm, nhất quán trong mọi cam kết. Xây dựng niềm tin vững chắc bằng giá trị thực.</p>
                 </div>
 
-                <!-- 2. Hiệu quả -->
-                <div class="bg-white p-7 rounded-3xl shadow-sm hover:shadow-xl transition border border-slate-200/80 space-y-4 group">
-                    <div class="w-12 h-12 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center text-xl group-hover:bg-green-600 group-hover:text-white transition shadow-sm">
-                        <i class="fa-solid fa-bolt"></i>
+                <!-- Hiệu Quả -->
+                <div class="bg-brandCard border border-slate-800 p-8 rounded-3xl hover:border-emerald-500/50 transition-all duration-300 group shadow-lg">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition shadow-inner">
+                        <i class="fa-solid fa-bolt-lightning"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">HIỆU QUẢ</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Hiệu quả thực chất; mỗi giải pháp tối ưu quy trình, giúp doanh nghiệp tăng trưởng bền vững.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">HIỆU QUẢ</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Hiệu quả thực chất; tối ưu hóa từng quy trình, giúp đối tác tăng trưởng bền vững và nhanh chóng.</p>
                 </div>
 
-                <!-- 3. Đổi mới -->
-                <div class="bg-white p-7 rounded-3xl shadow-sm hover:shadow-xl transition border border-slate-200/80 space-y-4 group">
-                    <div class="w-12 h-12 bg-blue-50 text-vnpayBlue rounded-2xl flex items-center justify-center text-xl group-hover:bg-vnpayBlue group-hover:text-white transition shadow-sm">
+                <!-- Đổi Mới -->
+                <div class="bg-brandCard border border-slate-800 p-8 rounded-3xl hover:border-blue-500/50 transition-all duration-300 group shadow-lg">
+                    <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition shadow-inner">
                         <i class="fa-solid fa-lightbulb"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">ĐỔI MỚI</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Không ngừng học hỏi, thích ứng và đổi mới trong cả công nghệ, tư duy và hành động.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">ĐỔI MỚI</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Không ngừng học hỏi, thích ứng linh hoạt và đổi mới toàn diện từ công nghệ đến tư duy hành động.</p>
                 </div>
 
-                <!-- 4. Đồng hành -->
-                <div class="bg-white p-7 rounded-3xl shadow-sm hover:shadow-xl transition border border-slate-200/80 space-y-4 group">
-                    <div class="w-12 h-12 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center text-xl group-hover:bg-green-600 group-hover:text-white transition shadow-sm">
-                        <i class="fa-solid fa-handshake"></i>
+                <!-- Đồng Hành -->
+                <div class="bg-brandCard border border-slate-800 p-8 rounded-3xl hover:border-emerald-500/50 transition-all duration-300 group shadow-lg">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center text-xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition shadow-inner">
+                        <i class="fa-solid fa-handshake-angle"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">ĐỒNG HÀNH</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Quan hệ dựa trên thấu hiểu, chia sẻ; đồng hành lâu dài cùng khách hàng và đối tác.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">ĐỒNG HÀNH</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Quan hệ hợp tác dựa trên sự thấu hiểu, sẻ chia và cam kết sát cánh lâu dài cùng khách hàng.</p>
                 </div>
 
-                <!-- 5. Bền vững -->
-                <div class="bg-white p-7 rounded-3xl shadow-sm hover:shadow-xl transition border border-slate-200/80 space-y-4 group md:col-span-2 lg:col-span-1">
-                    <div class="w-12 h-12 bg-blue-50 text-vnpayBlue rounded-2xl flex items-center justify-center text-xl group-hover:bg-vnpayBlue group-hover:text-white transition shadow-sm">
+                <!-- Bền Vững -->
+                <div class="bg-brandCard border border-slate-800 p-8 rounded-3xl hover:border-blue-500/50 transition-all duration-300 group shadow-lg md:col-span-2 lg:col-span-2">
+                    <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center text-xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition shadow-inner">
                         <i class="fa-solid fa-seedling"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900">BỀN VỮNG</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Phát triển hài hòa lợi ích; kinh doanh trách nhiệm, đóng góp cho cộng đồng DN Việt Nam.</p>
+                    <h3 class="text-lg font-bold text-white mb-2">BỀN VỮNG</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Phát triển hài hòa lợi ích kinh tế và trách nhiệm cộng đồng, đóng góp tích cực cho hệ sinh thái doanh nghiệp Việt Nam.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: DẤU ẤN HÀNH TRÌNH (Dựa trên ảnh VNNG3.jpg) -->
-    <section id="dau-an" class="py-16 sm:py-24 bg-white scroll-mt-20">
+    <!-- SECTION 3: DẤU ẤN HÀNH TRÌNH -->
+    <section id="dau-an" class="py-24 bg-[#0a1424] border-t border-slate-800/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
-                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Lịch sử phát triển</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900">Dấu ấn hành trình</h2>
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Lịch sử phát triển</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Dấu Ấn Hành Trình</h2>
+                <p class="text-slate-400 text-sm">Các cột mốc tăng trưởng ấn tượng từ khi thành lập đến nay.</p>
             </div>
 
-            <!-- Timeline Grid / Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- 2020 -->
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-vnpayBlue text-white font-bold text-xs px-4 py-1.5 rounded-bl-2xl">2020</div>
-                    <div class="w-10 h-10 bg-blue-100 text-vnpayBlue rounded-xl flex items-center justify-center font-bold">
+                <div class="bg-brandCard border border-slate-800 p-6 rounded-3xl relative overflow-hidden group hover:border-blue-500/40 transition">
+                    <span class="absolute top-4 right-4 text-xs font-bold bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full">2020</span>
+                    <div class="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center font-bold mb-4">
                         <i class="fa-solid fa-flag"></i>
                     </div>
-                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
-                        Thành lập VNNG 18/05, vốn điều lệ 30 tỷ; Phát triển mạng lưới giải pháp thanh toán số cho đối tác chiến lược VNPAY tại Việt Nam.
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Thành lập VNNG ngày 18/05, vốn điều lệ 30 tỷ; Phát triển mạng lưới giải pháp thanh toán số cho đối tác chiến lược VNPAY tại Việt Nam.
                     </p>
                 </div>
 
                 <!-- 2021-2022 -->
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-slate-800 text-white font-bold text-xs px-4 py-1.5 rounded-bl-2xl">2021-2022</div>
-                    <div class="w-10 h-10 bg-slate-200 text-slate-700 rounded-xl flex items-center justify-center font-bold">
+                <div class="bg-brandCard border border-slate-800 p-6 rounded-3xl relative overflow-hidden group hover:border-slate-600 transition">
+                    <span class="absolute top-4 right-4 text-xs font-bold bg-slate-800 text-slate-300 px-3 py-1 rounded-full">2021–2022</span>
+                    <div class="w-10 h-10 bg-slate-800 text-slate-300 rounded-xl flex items-center justify-center font-bold mb-4">
                         <i class="fa-solid fa-arrows-rotate"></i>
                     </div>
-                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
-                        Mở rộng đội ngũ thực chiến; chuẩn hóa quy trình triển khai – CSKH – đối soát khép kín.
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Mở rộng đội ngũ thực chiến; chuẩn hóa quy trình triển khai – CSKH – đối soát khép kín toàn diện.
                     </p>
                 </div>
 
                 <!-- 2023 -->
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-vnpayBlue text-white font-bold text-xs px-4 py-1.5 rounded-bl-2xl">2023</div>
-                    <div class="w-10 h-10 bg-blue-100 text-vnpayBlue rounded-xl flex items-center justify-center font-bold">
-                        <i class="fa-solid fa-map"></i>
+                <div class="bg-brandCard border border-slate-800 p-6 rounded-3xl relative overflow-hidden group hover:border-blue-500/40 transition">
+                    <span class="absolute top-4 right-4 text-xs font-bold bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full">2023</span>
+                    <div class="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center font-bold mb-4">
+                        <i class="fa-solid fa-map-location-dot"></i>
                     </div>
-                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
-                        Mở rộng toàn quốc 9 khu vực; Phát triển thị trường thêm mảng Chuyển đổi số cho đối tác VNPAY (phần mềm doanh nghiệp).
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Mở rộng toàn quốc 9 khu vực; Phát triển mảng Chuyển đổi số cho đối tác VNPAY (phần mềm doanh nghiệp).
                     </p>
                 </div>
 
                 <!-- 2024 -->
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-slate-800 text-white font-bold text-xs px-4 py-1.5 rounded-bl-2xl">2024</div>
-                    <div class="w-10 h-10 bg-slate-200 text-slate-700 rounded-xl flex items-center justify-center font-bold">
+                <div class="bg-brandCard border border-slate-800 p-6 rounded-3xl relative overflow-hidden group hover:border-slate-600 transition">
+                    <span class="absolute top-4 right-4 text-xs font-bold bg-slate-800 text-slate-300 px-3 py-1 rounded-full">2024</span>
+                    <div class="w-10 h-10 bg-slate-800 text-slate-300 rounded-xl flex items-center justify-center font-bold mb-4">
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
-                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
-                        Đồng hành cùng VNPAY phát triển hơn 700,000+ điểm chấp nhận thanh toán; triển khai phần mềm cho hàng nghìn doanh nghiệp; rèn luyện đội ngũ sales thực chiến bứt tốc.
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Đạt 700,000+ điểm chấp nhận thanh toán; triển khai phần mềm cho hàng nghìn doanh nghiệp; rèn luyện đội ngũ sales bứt tốc.
                     </p>
                 </div>
 
                 <!-- 2025 -->
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-vnpayBlue text-white font-bold text-xs px-4 py-1.5 rounded-bl-2xl">2025</div>
-                    <div class="w-10 h-10 bg-blue-100 text-vnpayBlue rounded-xl flex items-center justify-center font-bold">
-                        <i class="fa-solid fa-layer-group"></i>
+                <div class="bg-brandCard border border-slate-800 p-6 rounded-3xl relative overflow-hidden group hover:border-blue-500/40 transition">
+                    <span class="absolute top-4 right-4 text-xs font-bold bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full">2025</span>
+                    <div class="w-10 h-10 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center font-bold mb-4">
+                        <i class="fa-solid fa-network-wired"></i>
                     </div>
-                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
-                        Tăng trưởng 750,000+ điểm bán cho đối tác VNPAY với 300+ nhân sự phủ khắp cả nước; mở rộng nền tảng mở B2B (trạm sạc, kế toán – thuế hộ KD...).
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Tăng trưởng 750,000+ điểm bán với 300+ nhân sự phủ khắp cả nước; mở rộng nền tảng mở B2B (trạm sạc, kế toán – thuế hộ KD...).
                     </p>
                 </div>
 
                 <!-- 2026 -->
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-slate-800 text-white font-bold text-xs px-4 py-1.5 rounded-bl-2xl">2026</div>
-                    <div class="w-10 h-10 bg-slate-200 text-slate-700 rounded-xl flex items-center justify-center font-bold">
+                <div class="bg-brandCard border border-slate-800 p-6 rounded-3xl relative overflow-hidden group hover:border-emerald-500/40 transition">
+                    <span class="absolute top-4 right-4 text-xs font-bold bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full">2026</span>
+                    <div class="w-10 h-10 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center font-bold mb-4">
                         <i class="fa-solid fa-rocket"></i>
                     </div>
-                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
-                        "Chạm kết nối mọi giá trị": Xây dựng hệ sinh thái kết nối đa dịch vụ, mở rộng mạng lưới đối tác và khai thác dữ liệu để tạo tăng trưởng bền vững.
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        "Chạm kết nối mọi giá trị": Xây dựng hệ sinh thái kết nối đa dịch vụ, mở rộng mạng lưới đối tác và khai thác dữ liệu tạo tăng trưởng bền vững.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 4: LỘ TRÌNH PHÁT TRIỂN (Dựa trên ảnh VNNG4.png) -->
-    <section id="lo-trinh" class="py-16 sm:py-24 bg-slate-50 border-t border-slate-200/60 scroll-mt-20">
+    <!-- SECTION 4: LỘ TRÌNH PHÁT TRIỂN -->
+    <section id="lo-trinh" class="py-24 bg-brandDark border-t border-slate-800/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
-                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-100 px-3 py-1 rounded-full">Tương lai</span>
-                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900">Lộ trình phát triển</h2>
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-bold text-blue-400 uppercase tracking-widest bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">Tầm nhìn tương lai</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Lộ Trình Phát Triển</h2>
+                <p class="text-slate-400 text-sm">Chiến lược giai đoạn 2026 – 2030+ hướng tới hệ sinh thái số toàn diện.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 <!-- 2026 -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between space-y-4 hover:border-vnpayBlue transition">
-                    <div>
-                        <div class="inline-block bg-vnpayBlue text-white font-bold text-xs px-3 py-1 rounded-full mb-3">2026</div>
-                        <h3 class="font-bold text-slate-900 text-base mb-2">Nâng cấp vận hành &amp; mở rộng đối tác</h3>
-                        <p class="text-slate-600 text-xs leading-relaxed">
-                            Chuẩn hóa và số hóa hệ thống quản lý – vận hành; đẩy mạnh hợp tác, ký kết & mở rộng danh mục đối tác công nghệ / fintech.
+                <div class="bg-brandCard border border-slate-800 p-6 rounded-3xl flex flex-col justify-between hover:border-blue-500/50 transition group">
+                    <div class="space-y-3">
+                        <span class="inline-block bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full">2026</span>
+                        <h3 class="font-bold text-white text-base">Nâng cấp vận hành & mở rộng đối tác</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Chuẩn hóa và số hóa hệ thống quản lý – vận hành; đẩy mạnh hợp tác & mở rộng danh mục đối tác công nghệ / fintech.
                         </p>
                     </div>
                 </div>
 
                 <!-- 2027 -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between space-y-4 hover:border-green-600 transition">
-                    <div>
-                        <div class="inline-block bg-green-600 text-white font-bold text-xs px-3 py-1 rounded-full mb-3">2027</div>
-                        <h3 class="font-bold text-slate-900 text-base mb-2">Nhân rộng ngành nghề triển khai</h3>
-                        <p class="text-slate-600 text-xs leading-relaxed">
-                            Đưa mô hình triển khai đã kiểm chứng sang các lĩnh vực mới: tài chính, viễn thông, bán lẻ, ...; xây dựng đội ngũ chuyên ngành.
+                <div class="bg-brandCard border border-slate-800 p-6 rounded-3xl flex flex-col justify-between hover:border-emerald-500/50 transition group">
+                    <div class="space-y-3">
+                        <span class="inline-block bg-emerald-600 text-white font-bold text-xs px-3 py-1 rounded-full">2027</span>
+                        <h3 class="font-bold text-white text-base">Nhân rộng ngành nghề triển khai</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Đưa mô hình triển khai sang các lĩnh vực mới: tài chính, viễn thông, bán lẻ; xây dựng đội ngũ chuyên ngành chuyên sâu.
                         </p>
                     </div>
                 </div>
 
                 <!-- 2028 -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between space-y-4 hover:border-vnpayBlue transition">
-                    <div>
-                        <div class="inline-block bg-vnpayBlue text-white font-bold text-xs px-3 py-1 rounded-full mb-3">2028</div>
-                        <h3 class="font-bold text-slate-900 text-base mb-2">Tự động hóa trên nền dữ liệu</h3>
-                        <p class="text-slate-600 text-xs leading-relaxed">
-                            Tự động hóa phân bổ – theo dõi – chăm sóc; ứng dụng phân tích dữ liệu tổng hợp để dự báo nhu cầu và tối ưu nguồn lực.
+                <div class="bg-brandCard border border-slate-800 p-6 rounded-3xl flex flex-col justify-between hover:border-blue-500/50 transition group">
+                    <div class="space-y-3">
+                        <span class="inline-block bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full">2028</span>
+                        <h3 class="font-bold text-white text-base">Tự động hóa trên nền dữ liệu</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Tự động hóa phân bổ – chăm sóc; ứng dụng phân tích dữ liệu tổng hợp để dự báo nhu cầu và tối ưu nguồn lực.
                         </p>
                     </div>
                 </div>
 
                 <!-- 2029 -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between space-y-4 hover:border-green-600 transition">
-                    <div>
-                        <div class="inline-block bg-green-600 text-white font-bold text-xs px-3 py-1 rounded-full mb-3">2029</div>
-                        <h3 class="font-bold text-slate-900 text-base mb-2">Nền tảng Go-to-Market đa ngành</h3>
-                        <p class="text-slate-600 text-xs leading-relaxed">
-                            Hợp nhất mạng lưới đối tác, đội ngũ triển khai & hạ tầng vận hành thành một nền tảng go-to-market thống nhất.
+                <div class="bg-brandCard border border-slate-800 p-6 rounded-3xl flex flex-col justify-between hover:border-emerald-500/50 transition group">
+                    <div class="space-y-3">
+                        <span class="inline-block bg-emerald-600 text-white font-bold text-xs px-3 py-1 rounded-full">2029</span>
+                        <h3 class="font-bold text-white text-base">Nền tảng Go-to-Market đa ngành</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Hợp nhất mạng lưới đối tác, đội ngũ & hạ tầng thành một nền tảng go-to-market thống nhất mạnh mẽ.
                         </p>
                     </div>
                 </div>
 
                 <!-- 2030+ -->
-                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between space-y-4 hover:border-vnpayBlue transition md:col-span-2 lg:col-span-1">
-                    <div>
-                        <div class="inline-block bg-slate-900 text-white font-bold text-xs px-3 py-1 rounded-full mb-3">2030+</div>
-                        <h3 class="font-bold text-slate-900 text-base mb-2">Hệ sinh thái Chạm kết nối</h3>
-                        <p class="text-slate-600 text-xs leading-relaxed">
-                            Trở thành hạ tầng kết nối trung gian giữa đối tác công nghệ và thị trường đa ngành — hiện thực hóa 'Chạm kết nối mọi giá trị'.
+                <div class="bg-brandCard border border-slate-800 p-6 rounded-3xl flex flex-col justify-between hover:border-blue-500/50 transition group md:col-span-2 lg:col-span-1">
+                    <div class="space-y-3">
+                        <span class="inline-block bg-slate-100 text-brandDark font-bold text-xs px-3 py-1 rounded-full">2030+</span>
+                        <h3 class="font-bold text-white text-base">Hệ sinh thái Chạm kết nối</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Trở thành hạ tầng kết nối trung gian giữa đối tác công nghệ và thị trường — hiện thực hóa sứ mệnh 'Chạm kết nối mọi giá trị'.
                         </p>
                     </div>
                 </div>
@@ -348,32 +395,32 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 text-xs sm:text-sm border-t border-slate-800">
+    <footer class="bg-[#050c16] text-slate-400 py-12 border-t border-slate-800 text-xs sm:text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 pb-10 border-b border-slate-800">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 pb-10 border-b border-slate-800/80">
                 <div class="space-y-3">
                     <div class="flex items-center space-x-3">
-                        <img src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/VNNG.png" alt="Logo VNNG" class="h-9 w-auto rounded">
-                        <span class="text-white font-bold tracking-wider text-base">VNNG SOLUTIONS</span>
+                        <img src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/VNNG.png" alt="Logo" class="h-8 w-auto">
+                        <span class="text-white font-extrabold tracking-wider text-base">VNNG SOLUTIONS</span>
                     </div>
                     <p class="text-slate-400 leading-relaxed text-xs">
-                        Chúng tôi kết nối các giải pháp công nghệ với nhu cầu thực tiễn, để giá trị công nghệ được ứng dụng, lan tỏa và vươn xa.
+                        Kết nối các giải pháp công nghệ với nhu cầu thực tiễn, tạo dựng giá trị và sự phát triển bền vững cho doanh nghiệp Việt.
                     </p>
                 </div>
 
                 <div class="space-y-2.5">
-                    <h3 class="text-white font-bold uppercase tracking-wider text-xs mb-3">Thông Tin Liên Hệ</h3>
-                    <p><i class="fa-solid fa-building text-vnpayBlue mr-2"></i> <strong>Đơn vị:</strong> VNNG Solutions</p>
-                    <p><i class="fa-solid fa-location-dot text-vnpayBlue mr-2"></i> <strong>Địa chỉ:</strong> Số 22, phố Láng Hạ, phường Láng, Thành phố Hà Nội</p>
-                    <p><i class="fa-solid fa-phone text-vnpayBlue mr-2"></i> <strong>Hotline/Zalo:</strong> <a href="tel:0968122893" class="text-white hover:underline font-semibold">0968 122 893</a></p>
+                    <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-3">Thông Tin Liên Hệ</h4>
+                    <p><i class="fa-solid fa-building text-blue-400 mr-2"></i> <strong>Đơn vị:</strong> VNNG Solutions</p>
+                    <p><i class="fa-solid fa-location-dot text-blue-400 mr-2"></i> <strong>Địa chỉ:</strong> Số 22, phố Láng Hạ, phường Láng, Thành phố Hà Nội</p>
+                    <p><i class="fa-solid fa-phone text-blue-400 mr-2"></i> <strong>Hotline/Zalo:</strong> <a href="tel:0968122893" class="text-white hover:underline font-semibold">0968 122 893</a></p>
                 </div>
 
                 <div class="space-y-2.5">
-                    <h3 class="text-white font-bold uppercase tracking-wider text-xs mb-3">Liên Kết Nhanh</h3>
+                    <h4 class="text-white font-bold uppercase tracking-wider text-xs mb-3">Liên Kết Nhanh</h4>
                     <ul class="space-y-2 text-xs">
                         <li><a href="https://vnngsolutions.github.io/" class="hover:text-white transition underline">Trang chủ</a></li>
                         <li><a href="https://vnngsolutions.github.io/ve-chung-toi.html" class="hover:text-white transition underline">Về chúng tôi</a></li>
-                        <li><a href="https://vnngsolutions.github.io/dieu-kien-va-dieu-khoan-su-dung-dich-vu.html" class="hover:text-white transition underline">Điều kiện và điều khoản</a></li>
+                        <li><a href="https://vnngsolutions.github.io/dieu-kien-va-dieu-khoan-su-dung-dich-vu.html" class="hover:text-white transition underline">Điều khoản dịch vụ</a></li>
                     </ul>
                 </div>
             </div>
