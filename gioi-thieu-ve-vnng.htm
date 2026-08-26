@@ -1,13 +1,47 @@
-
-<!doctype html>
-<html lang="vi">
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="google-site-verification" content="afoDYdIGK5fvu6Alvb2R8JrNxypcUIIa4CjiTabAuF8" />	<link rel="icon" href="https://intech-group.vn/favicon.ico" sizes="any">
-	<link rel="icon" type="image/png" sizes="48x48" href="https://intech-group.vn/favicon-48x48.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="https://intech-group.vn/apple-touch-icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Về Chúng Tôi - VNNG Solutions</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/logo.png">
 
+    <meta name="description" content="Giới thiệu về Công ty Cổ phần Giải pháp Kinh doanh Thế hệ mới VNNG - Tầm nhìn, Sứ mệnh, Giá trị cốt lõi, Dấu ấn hành trình và Lộ trình phát triển.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        vnpayBlue: '#0055A5',
+                        vnpayRed: '#ED1C24',
+                        vnpayDark: '#0A2540',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-vnpayBlue selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-slate-100 py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <img alt="Logo VNNG Solutions" src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/logo.png" class="h-10 sm:h-12 w-auto object-contain flex-shrink-0">
+                <div class="flex flex-col">
+                    <span class="font-black text-sm sm:text-base text-slate-900 tracking-tight leading-tight">VNNG SOLUTIONS</span>
+                    <span class="text-[10px] sm:text-xs text-slate-500 font-medium">Giải pháp triển khai toàn diện</span>
 	<base href="https://vnng-newgeneration.github.io/"  />
 	<title>Giới thiệu về VNNG</title>
 <meta name="description" content="Giới thiệu về Intech" />
@@ -292,8 +326,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </li>
                     </ul>
                 </div>
-            </div><!--end .r_hea-->
+            </div>
+
+            <nav class="hidden md:flex items-center gap-7">
+                <a href="https://vnngsolutions.github.io/" class="text-sm font-semibold text-slate-700 hover:text-vnpayBlue transition">Trang chủ</a>
+                <a href="#gioi-thieu" class="text-sm font-semibold text-vnpayBlue transition">Giới thiệu</a>
+                <a href="#gia-tri-cot-loi" class="text-sm font-semibold text-slate-700 hover:text-vnpayBlue transition">Văn hóa</a>
+                <a href="#dau-an" class="text-sm font-semibold text-slate-700 hover:text-vnpayBlue transition">Hành trình</a>
+                <a href="#lo-trinh" class="text-sm font-semibold text-slate-700 hover:text-vnpayBlue transition">Lộ trình</a>
+            </nav>
+
+            <div>
+                <a href="https://vnngsolutions.github.io/#dang-ky" class="bg-vnpayBlue hover:bg-blue-700 text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-md transition">
+                    Liên Hệ Hợp Tác
+                </a>
+            </div>
         </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="relative bg-gradient-to-b from-blue-900 via-vnpayBlue to-blue-800 text-white py-16 sm:py-24">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+            <span class="inline-block bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-blue-200 text-xs font-semibold uppercase tracking-widest border border-white/20">
+                Về Chúng Tôi
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+                Chạm Kết Nối Mọi Giá Trị
+            </h1>
+            <p class="text-blue-100 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                Hạ tầng kết nối trung gian giữa đối tác công nghệ và thị trường đa ngành, giúp giải pháp vươn xa và bền vững.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 1: GIỚI THIỆU CÔNG TY (Dựa trên ảnh VNNG1.jpg) -->
+    <section id="gioi-thieu" class="py-16 sm:py-24 bg-white scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Tổng quan</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900">Giới thiệu Công ty</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Sơ đồ kết nối (Mô phỏng hình khối thông minh từ ảnh 1) -->
+                <div class="lg:col-span-6 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-sm relative">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-1">
+                            <div class="text-xs font-bold text-vnpayBlue uppercase">ĐỐI TÁC CÔNG NGHỆ</div>
+                            <p class="text-xs text-slate-500">Fintech · SaaS · IoT · Chuyển đổi số</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-1">
+                            <div class="text-xs font-bold text-green-600 uppercase">THANH TOÁN &amp; CHUYỂN ĐỔI SỐ</div>
+                            <p class="text-xs text-slate-500">Ngân hàng · VNPAY · ZaloPay</p>
+                        </div>
+                    </div>
+
+                    <div class="my-6 flex justify-center">
+                        <div class="w-24 h-24 bg-gradient-to-br from-vnpayBlue to-blue-700 text-white rounded-full flex flex-col items-center justify-center shadow-xl border-4 border-white">
+                            <span class="font-black text-base">VNNG</span>
+                            <span class="text-[10px] text-blue-100 font-medium">Kết nối</span>
+                        </div>
     </div><!--end .min_wrap-->
 </header><!--End #header-->	        <main id="container">
         <section class="bg_gt" style="background-image: url(uploads/danhmuc/gioi-thieu-ve-intech-1732083993-sljux.jpg);">
@@ -475,9 +568,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                                     <img src="https://raw.githubusercontent.com/VNNG-NewGeneration/vnng-newgeneration.github.io/main/logo.jpg" alt="VNNG">
                                                 <span></span>
                     </div>
-                    <div class="cc_foot_2">
-                        <img src="imgs/cc.webp" alt="Chứng chỉ">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-1">
+                            <div class="text-xs font-bold text-green-600 uppercase">THỊ TRƯỜNG ĐA NGÀNH</div>
+                            <p class="text-xs text-slate-500">Sản xuất · Logistics · Bán lẻ</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-1">
+                            <div class="text-xs font-bold text-slate-700 uppercase">DOANH NGHIỆP · HỘ KD</div>
+                            <p class="text-xs text-slate-500">Điểm bán · Người dùng</p>
+                        </div>
                     </div>
+                </div>
                 </li>
                 <li>
                     <div class="t_foot_2">HÀ NỘI</div>
@@ -732,29 +834,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 e.preventDefault();
             });
 
-            // Chặn việc bôi đen và sao chép văn bản
-            $(document).on("selectstart", function(e) {
-                e.preventDefault();
-            });
+                <!-- Nội dung mô tả chi tiết công ty -->
+                <div class="lg:col-span-6 space-y-5">
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900">
+                        Công ty Cổ phần Giải pháp Kinh doanh Thế hệ mới VNNG (<span class="text-vnpayBlue">VNNG Solution., JSC</span>)
+                    </h3>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Được thành lập ngày <strong class="text-slate-900">18/05/2020</strong>, với sứ mệnh kết nối các giải pháp công nghệ có giá trị thực tiễn đến thị trường, đồng hành cùng đối tác trong hành trình mở rộng kinh doanh, gia tăng hiệu quả vận hành và xây dựng hệ sinh thái phát triển bền vững.
+                    </p>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        VNNG cung cấp <strong class="text-slate-900">giải pháp triển khai toàn diện</strong> từ phát triển mạng lưới khách hàng, triển khai sản phẩm, đào tạo, vận hành đến chăm sóc sau bán, giúp đối tác rút ngắn thời gian mở rộng thị trường và nâng cao hiệu quả kinh doanh.
+                    </p>
+                    <div class="bg-blue-50/70 border border-blue-100 rounded-2xl p-4 text-xs sm:text-sm text-slate-700 space-y-2">
+                        <div class="flex items-center space-x-2 font-bold text-vnpayBlue">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <span>Năng lực thực chiến toàn quốc:</span>
+                        </div>
+                        <p class="leading-relaxed">
+                            Với mạng lưới tại <strong class="text-slate-900">04 vùng - 09 khu vực</strong> trên toàn quốc và <strong class="text-slate-900">hơn 300 nhân sự</strong> thực chiến giàu kinh nghiệm, VNNG đã triển khai các giải pháp thanh toán và chuyển đổi số <strong class="text-slate-900">hơn 750,000 điểm chấp nhận dịch vụ</strong> cho đối tác chiến lược VNPAY từ năm 2020 đến nay, đồng thời mở rộng năng lực triển khai trong các lĩnh vực như: Tài chính, bảo hiểm, viễn thông, thương mại dịch vụ, bán lẻ, logistics,...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            // Chặn phím tắt Ctrl + C (sao chép), Ctrl + X (cắt), Ctrl + V (dán)
-            $(document).on("keydown", function(e) {
-                // Kiểm tra nếu người dùng nhấn Ctrl + C, Ctrl + X, hoặc Ctrl + U (xem mã nguồn)
-                if (e.ctrlKey && (e.key === "c" || e.key === "x" || e.key === "u")) {
-                    e.preventDefault();
-                    alert("Chức năng sao chép đã bị vô hiệu hóa.");
-                }
-            });
-        });
-    </script>
-	<div class="menu_mobile" style="visibility: hidden;">
-    <span class="close_menu_mobile"></span>
-    <div class="logo_mb">
-                <a href="https://intech-group.vn">
-            <img src="uploads/thuvien/intechbrother-1785379466-mrets.svg" alt="intechBrother">
-        </a>
+    <!-- SECTION 2: VĂN HÓA & GIÁ TRỊ CỐT LÕI (Dựa trên ảnh VNNG2.png) -->
+    <section id="gia-tri-cot-loi" class="py-16 sm:py-24 bg-slate-50 border-t border-slate-200/60 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-100 px-3 py-1 rounded-full">Văn hóa</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900">Giá trị cốt lõi</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Năm giá trị nền tảng định hình cách VNNG làm việc, hợp tác và tạo ra giá trị bền vững.</p>
             </div>
 
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- 1. Uy tín -->
+                <div class="bg-white p-7 rounded-3xl shadow-sm hover:shadow-xl transition border border-slate-200/80 space-y-4 group">
+                    <div class="w-12 h-12 bg-blue-50 text-vnpayBlue rounded-2xl flex items-center justify-center text-xl group-hover:bg-vnpayBlue group-hover:text-white transition shadow-sm">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">UY TÍN</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Minh bạch, trách nhiệm, nhất quán trong mọi cam kết. Niềm tin xây bằng giá trị thật.</p>
+                </div>
     <div class="menu_accordion">
         <ul class="ul_ma_1">
             <li >
@@ -1007,190 +1129,229 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <input type="hidden" id="product-id" name="product_id">
                 <input type="hidden" id="product-title" name="product_title">
 
-                <p class="title text-center">Quý khách cần tư vấn hoặc nhận báo giá, xin để lại yêu cầu tại đây!</p>
-                <div class="form-row">
-                    <input class="ipt_ct box-sizing-fix" type="text" placeholder="Họ tên *" name="ten" value="" required="required">
+                <!-- 2. Hiệu quả -->
+                <div class="bg-white p-7 rounded-3xl shadow-sm hover:shadow-xl transition border border-slate-200/80 space-y-4 group">
+                    <div class="w-12 h-12 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center text-xl group-hover:bg-green-600 group-hover:text-white transition shadow-sm">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">HIỆU QUẢ</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Hiệu quả thực chất; mỗi giải pháp tối ưu quy trình, giúp doanh nghiệp tăng trưởng bền vững.</p>
                 </div>
-                <div class="form-row">
-                    <input class="ipt_ct box-sizing-fix" type="text" placeholder="Điện thoại *" name="dienthoai" value="" required="required">
+
+                <!-- 3. Đổi mới -->
+                <div class="bg-white p-7 rounded-3xl shadow-sm hover:shadow-xl transition border border-slate-200/80 space-y-4 group">
+                    <div class="w-12 h-12 bg-blue-50 text-vnpayBlue rounded-2xl flex items-center justify-center text-xl group-hover:bg-vnpayBlue group-hover:text-white transition shadow-sm">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">ĐỔI MỚI</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Không ngừng học hỏi, thích ứng và đổi mới trong cả công nghệ, tư duy và hành động.</p>
                 </div>
-                <div class="form-row">
-                    <textarea class="txt_ct box-sizing-fix" placeholder="Nội dung *" name="noidung" required="required"></textarea>
+
+                <!-- 4. Đồng hành -->
+                <div class="bg-white p-7 rounded-3xl shadow-sm hover:shadow-xl transition border border-slate-200/80 space-y-4 group">
+                    <div class="w-12 h-12 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center text-xl group-hover:bg-green-600 group-hover:text-white transition shadow-sm">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">ĐỒNG HÀNH</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Quan hệ dựa trên thấu hiểu, chia sẻ; đồng hành lâu dài cùng khách hàng và đối tác.</p>
                 </div>
-                <div class="form-row">
-                    <button type="submit" class="btn_ct" name="guimail">
-                        Tư vấn miễn phí
-                    </button>
+
+                <!-- 5. Bền vững -->
+                <div class="bg-white p-7 rounded-3xl shadow-sm hover:shadow-xl transition border border-slate-200/80 space-y-4 group md:col-span-2 lg:col-span-1">
+                    <div class="w-12 h-12 bg-blue-50 text-vnpayBlue rounded-2xl flex items-center justify-center text-xl group-hover:bg-vnpayBlue group-hover:text-white transition shadow-sm">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">BỀN VỮNG</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Phát triển hài hòa lợi ích; kinh doanh trách nhiệm, đóng góp cho cộng đồng DN Việt Nam.</p>
                 </div>
                 <div class="hotline_popup">Hotline: <a href="tel:0968122893">0968.122.893</a> </div>
             </form>
             </div>
-</div>
-<style>
-    .hotline_popup a { color: #ff0000; font-size: 22px; font-weight: 600; }
-    .popup-tu-van { margin-top: 20px; }
-    .popup-tu-van span { color: #fff; background: #008c48; font-size: 12px; float: left; font-weight: 600; text-transform: uppercase; padding: 7px 30px; border-radius: 5px; }
-    .popup-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 9999; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s ease; }
-    .popup-overlay.is-active { display: flex; opacity: 1; }
-    .popup-box { background: #fff; padding: 35px 30px; border-radius: 12px; width: 90%; max-width: 450px; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.2); transform: scale(0.85) translateY(20px); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; }
-    .popup-overlay.is-active .popup-box { opacity: 1; }
-    .popup-box .ipt_ct::placeholder, .popup-box .txt_ct::placeholder { color: #999 !important; opacity: 1 !important; }
-    .popup-close { position: absolute; top: 12px; right: 16px; font-size: 26px; line-height: 1; cursor: pointer; color: #d4082d; transition: color 0.2s ease, transform 0.2s ease; }
-    .popup-close:hover { color: #008c48; transform: rotate(90deg); }
-    .popup-box .title { font-size: 14px; font-weight: 600; margin: 20px 0px; text-transform: uppercase; color: #333; text-align: center; }
-    .popup-box .form-row { margin-bottom: 15px; }
-    .popup-box .ipt_ct, .popup-box .txt_ct { width: 100%; padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; font-family: inherit; outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease; box-sizing: border-box; }
-    .popup-box .ipt_ct:focus, .popup-box .txt_ct:focus { border-color: #008c48; box-shadow: 0 0 0 3px rgba(129,166,251,0.15); }
-    .popup-box .txt_ct { min-height: 100px; resize: vertical; }
-    .popup-box .btn_ct { width: 100%; padding: 13px 0; background: #008c48; text-transform: uppercase; color: #fff; border: none; border-radius: 5px; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s ease, transform 0.15s ease; }
-    .popup-box .btn_ct:hover { background: #045f93; }
-    .popup-box .btn_ct:active { transform: scale(0.97); }
-    body.popup-open { overflow: hidden; }
-    .popup-overlay { display: none; }
-    .popup-overlay.is-active { display: block !important; position: fixed !important; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; }
-    .popup-overlay.is-active .popup-box { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; border-radius: 12px; padding: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); width: 320px; box-sizing: border-box; }
-    .click_baogia { display: block; width: fit-content; background: #008c48; color: #fff !important;; margin: 10px auto;  text-align: center;  padding: 8px 20px; cursor: pointer; border-radius: 8px; box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2); font-weight: bold;  font-size: 13px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;  white-space: nowrap;}
-    .click_baogia:hover { background: #ff0000;}
-    @media (max-width: 576px) {
-        .popup-box { width: 94%; padding: 28px 20px; border-radius: 10px; }
-        .popup-box .title { font-size: 18px; }
-    }
-</style>
-<script>
-    const WAIT_TIME = 5000; // 30 giây - chỉ áp dụng cho chế độ tự động popup
-    const BLOCK_DURATION = 24 * 60 * 60 * 1000; // 24 tiếng
+        </div>
+    </section>
 
-    function updateCurrentPageInfo() {
-        try {
-            document.getElementById('product-url').value = window.location.href;
-            let slug = 'trang-chu';
-            const pathSegments = window.location.pathname
-                .split('/')
-                .filter(item => item !== '');
-            if (pathSegments.length > 0) {
-                slug = pathSegments[pathSegments.length - 1];
-                slug = slug.replace('.htm', '');
-                slug = slug.replace(/-\d+$/, '');
-            }
-            document.getElementById('product-id').value = slug;
-            let title = document.title;
-            if (title.indexOf('|') !== -1) {
-                title = title.split('|')[0].trim();
-            }
-            document.getElementById('product-title').value = title;
-        } catch (e) {
-            document.getElementById('product-url').value = window.location.href;
-            document.getElementById('product-id').value = '';
-            document.getElementById('product-title').value = document.title;
-        }
-    }
+    <!-- SECTION 3: DẤU ẤN HÀNH TRÌNH (Dựa trên ảnh VNNG3.jpg) -->
+    <section id="dau-an" class="py-16 sm:py-24 bg-white scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Lịch sử phát triển</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900">Dấu ấn hành trình</h2>
+            </div>
 
-    function setGlobalBlockUntilTomorrow() {
-        const now = new Date().getTime();
-        localStorage.setItem('hide_lead_system_until', now + BLOCK_DURATION);
-    }
+            <!-- Timeline Grid / Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 2020 -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-vnpayBlue text-white font-bold text-xs px-4 py-1.5 rounded-bl-2xl">2020</div>
+                    <div class="w-10 h-10 bg-blue-100 text-vnpayBlue rounded-xl flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-flag"></i>
+                    </div>
+                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
+                        Thành lập VNNG 18/05, vốn điều lệ 30 tỷ; Phát triển mạng lưới giải pháp thanh toán số cho đối tác chiến lược VNPAY tại Việt Nam.
+                    </p>
+                </div>
 
-    function isSystemBlocked() {
-        const blockUntil = localStorage.getItem('hide_lead_system_until');
-        if (!blockUntil) return false;
-        const now = new Date().getTime();
-        if (now > parseInt(blockUntil)) {
-            localStorage.removeItem('hide_lead_system_until');
-            localStorage.removeItem('auto_popup_dismissed');
-            return false;
-        }
-        return true;
-    }
+                <!-- 2021-2022 -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-slate-800 text-white font-bold text-xs px-4 py-1.5 rounded-bl-2xl">2021-2022</div>
+                    <div class="w-10 h-10 bg-slate-200 text-slate-700 rounded-xl flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
+                        Mở rộng đội ngũ thực chiến; chuẩn hóa quy trình triển khai – CSKH – đối soát khép kín.
+                    </p>
+                </div>
 
-    function closePopupAndShowTrigger() {
-        const popup = document.getElementById('popup-tu-van-form');
-        if (popup) popup.classList.remove('is-active');
-        const triggerBtn = document.getElementById('trigger-quote-btn');
-        if (triggerBtn) triggerBtn.style.display = 'block';
-        localStorage.setItem('auto_popup_dismissed', 'true');
-    }
+                <!-- 2023 -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-vnpayBlue text-white font-bold text-xs px-4 py-1.5 rounded-bl-2xl">2023</div>
+                    <div class="w-10 h-10 bg-blue-100 text-vnpayBlue rounded-xl flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-map"></i>
+                    </div>
+                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
+                        Mở rộng toàn quốc 9 khu vực; Phát triển thị trường thêm mảng Chuyển đổi số cho đối tác VNPAY (phần mềm doanh nghiệp).
+                    </p>
+                </div>
 
-    function openPopupManual() {
-        updateCurrentPageInfo();
-        const popup = document.getElementById('popup-tu-van-form');
-        if (popup) popup.classList.add('is-active');
-        const triggerBtn = document.getElementById('trigger-quote-btn');
-        if (triggerBtn) triggerBtn.style.display = 'none';
-    }
+                <!-- 2024 -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-slate-800 text-white font-bold text-xs px-4 py-1.5 rounded-bl-2xl">2024</div>
+                    <div class="w-10 h-10 bg-slate-200 text-slate-700 rounded-xl flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
+                        Đồng hành cùng VNPAY phát triển hơn 700,000+ điểm chấp nhận thanh toán; triển khai phần mềm cho hàng nghìn doanh nghiệp; rèn luyện đội ngũ sales thực chiến bứt tốc.
+                    </p>
+                </div>
 
-    $(document).ready(function () {
-        // Loại #trigger-quote-btn ra, chỉ tính nút click_baogia do trang khác chèn riêng
-        const $customBaogiaBtn = $('.click_baogia').not('#trigger-quote-btn');
-        const hasClickBaogia = $customBaogiaBtn.length > 0;
+                <!-- 2025 -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-vnpayBlue text-white font-bold text-xs px-4 py-1.5 rounded-bl-2xl">2025</div>
+                    <div class="w-10 h-10 bg-blue-100 text-vnpayBlue rounded-xl flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
+                        Tăng trưởng 750,000+ điểm bán cho đối tác VNPAY với 300+ nhân sự phủ khắp cả nước; mở rộng nền tảng mở B2B (trạm sạc, kế toán – thuế hộ KD...).
+                    </p>
+                </div>
 
-        if (hasClickBaogia) {
-            // ===== CHẾ ĐỘ 2: trang có chèn nút click_baogia riêng =====
-            $customBaogiaBtn.show().addClass('active');
+                <!-- 2026 -->
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm space-y-3 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-slate-800 text-white font-bold text-xs px-4 py-1.5 rounded-bl-2xl">2026</div>
+                    <div class="w-10 h-10 bg-slate-200 text-slate-700 rounded-xl flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
+                        "Chạm kết nối mọi giá trị": Xây dựng hệ sinh thái kết nối đa dịch vụ, mở rộng mạng lưới đối tác và khai thác dữ liệu để tạo tăng trưởng bền vững.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            setInterval(function () {
-                $customBaogiaBtn
-                    .fadeOut(300)
-                    .fadeIn(300)
-                    .fadeOut(300)
-                    .fadeIn(300);
-            }, 10000);
+    <!-- SECTION 4: LỘ TRÌNH PHÁT TRIỂN (Dựa trên ảnh VNNG4.png) -->
+    <section id="lo-trinh" class="py-16 sm:py-24 bg-slate-50 border-t border-slate-200/60 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-100 px-3 py-1 rounded-full">Tương lai</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900">Lộ trình phát triển</h2>
+            </div>
 
-            $customBaogiaBtn.click(function () {
-                updateCurrentPageInfo();
-                $('#popup-tu-van-form').addClass('is-active');
-                $(this).hide();
-            });
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- 2026 -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between space-y-4 hover:border-vnpayBlue transition">
+                    <div>
+                        <div class="inline-block bg-vnpayBlue text-white font-bold text-xs px-3 py-1 rounded-full mb-3">2026</div>
+                        <h3 class="font-bold text-slate-900 text-base mb-2">Nâng cấp vận hành &amp; mở rộng đối tác</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Chuẩn hóa và số hóa hệ thống quản lý – vận hành; đẩy mạnh hợp tác, ký kết & mở rộng danh mục đối tác công nghệ / fintech.
+                        </p>
+                    </div>
+                </div>
 
-        } else {
-            // ===== CHẾ ĐỘ 1: trang bình thường, tự bật popup sau 30s =====
-            setTimeout(function () {
-                if (isSystemBlocked()) return;
+                <!-- 2027 -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between space-y-4 hover:border-green-600 transition">
+                    <div>
+                        <div class="inline-block bg-green-600 text-white font-bold text-xs px-3 py-1 rounded-full mb-3">2027</div>
+                        <h3 class="font-bold text-slate-900 text-base mb-2">Nhân rộng ngành nghề triển khai</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Đưa mô hình triển khai đã kiểm chứng sang các lĩnh vực mới: tài chính, viễn thông, bán lẻ, ...; xây dựng đội ngũ chuyên ngành.
+                        </p>
+                    </div>
+                </div>
 
-                if (localStorage.getItem('auto_popup_dismissed') === 'true') {
-                    const triggerBtn = document.getElementById('trigger-quote-btn');
-                    if (triggerBtn) triggerBtn.style.display = 'block';
-                    return;
-                }
+                <!-- 2028 -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between space-y-4 hover:border-vnpayBlue transition">
+                    <div>
+                        <div class="inline-block bg-vnpayBlue text-white font-bold text-xs px-3 py-1 rounded-full mb-3">2028</div>
+                        <h3 class="font-bold text-slate-900 text-base mb-2">Tự động hóa trên nền dữ liệu</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Tự động hóa phân bổ – theo dõi – chăm sóc; ứng dụng phân tích dữ liệu tổng hợp để dự báo nhu cầu và tối ưu nguồn lực.
+                        </p>
+                    </div>
+                </div>
 
-                                    updateCurrentPageInfo();
-                    const popup = document.getElementById('popup-tu-van-form');
-                    if (popup) popup.classList.add('is-active');
-                            }, WAIT_TIME);
-        }
+                <!-- 2029 -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between space-y-4 hover:border-green-600 transition">
+                    <div>
+                        <div class="inline-block bg-green-600 text-white font-bold text-xs px-3 py-1 rounded-full mb-3">2029</div>
+                        <h3 class="font-bold text-slate-900 text-base mb-2">Nền tảng Go-to-Market đa ngành</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Hợp nhất mạng lưới đối tác, đội ngũ triển khai & hạ tầng vận hành thành một nền tảng go-to-market thống nhất.
+                        </p>
+                    </div>
+                </div>
 
-        
-        const formElement = document.getElementById('lead-form-system');
-        if (formElement) {
-            formElement.addEventListener('submit', function () {
-                updateCurrentPageInfo();
-            });
-        }
-    });
-</script>	<script>$(document).ready(function(){setTimeout(function(){$.get('librarys/xuly_count.php?ko_dem=1');},4000);});</script>
-	<script src="scripts/swiper-11/swiper-bundle.min.js"></script>
-    <script src="scripts/fancybox-5/dist/fancybox/fancybox.umd.js"></script>
-	<script src="scripts/aos/aos.js"></script>
-    <script src="scripts/frame_script.js?v=7371"></script>
-	<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N8RW9XMR');</script>
-<!-- End Google Tag Manager -->
+                <!-- 2030+ -->
+                <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 flex flex-col justify-between space-y-4 hover:border-vnpayBlue transition md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="inline-block bg-slate-900 text-white font-bold text-xs px-3 py-1 rounded-full mb-3">2030+</div>
+                        <h3 class="font-bold text-slate-900 text-base mb-2">Hệ sinh thái Chạm kết nối</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Trở thành hạ tầng kết nối trung gian giữa đối tác công nghệ và thị trường đa ngành — hiện thực hóa 'Chạm kết nối mọi giá trị'.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8RW9XMR"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-xs sm:text-sm border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 pb-10 border-b border-slate-800">
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <img src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/VNNG.png" alt="Logo VNNG" class="h-9 w-auto rounded">
+                        <span class="text-white font-bold tracking-wider text-base">VNNG SOLUTIONS</span>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed text-xs">
+                        Chúng tôi kết nối các giải pháp công nghệ với nhu cầu thực tiễn, để giá trị công nghệ được ứng dụng, lan tỏa và vươn xa.
+                    </p>
+                </div>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7PXK7700NW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+                <div class="space-y-2.5">
+                    <h3 class="text-white font-bold uppercase tracking-wider text-xs mb-3">Thông Tin Liên Hệ</h3>
+                    <p><i class="fa-solid fa-building text-vnpayBlue mr-2"></i> <strong>Đơn vị:</strong> VNNG Solutions</p>
+                    <p><i class="fa-solid fa-location-dot text-vnpayBlue mr-2"></i> <strong>Địa chỉ:</strong> Số 22, phố Láng Hạ, phường Láng, Thành phố Hà Nội</p>
+                    <p><i class="fa-solid fa-phone text-vnpayBlue mr-2"></i> <strong>Hotline/Zalo:</strong> <a href="tel:0968122893" class="text-white hover:underline font-semibold">0968 122 893</a></p>
+                </div>
 
-  gtag('config', 'G-7PXK7700NW');
-</script></body>
+                <div class="space-y-2.5">
+                    <h3 class="text-white font-bold uppercase tracking-wider text-xs mb-3">Liên Kết Nhanh</h3>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="https://vnngsolutions.github.io/" class="hover:text-white transition underline">Trang chủ</a></li>
+                        <li><a href="https://vnngsolutions.github.io/ve-chung-toi.html" class="hover:text-white transition underline">Về chúng tôi</a></li>
+                        <li><a href="https://vnngsolutions.github.io/dieu-kien-va-dieu-khoan-su-dung-dich-vu.html" class="hover:text-white transition underline">Điều kiện và điều khoản</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center text-slate-500 text-xs">
+                <p>&copy; 2026 VNNG Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
 </html>
